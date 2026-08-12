@@ -39,8 +39,8 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full">
-      <nav className="mx-auto flex w-full max-w-[820px] items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
+    <header className="w-full bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-neutral-100">
+      <nav className="mx-auto flex w-full max-w-[820px] items-center justify-between px-5 py-5 sm:px-8 sm:py-6 ">
         
         {/* Navigation */}
         <div className="flex min-w-0 items-center gap-5 sm:gap-8">
