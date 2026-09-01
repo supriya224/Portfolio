@@ -258,7 +258,7 @@ export default function Fire() {
         ================================================= */}
 
         <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:px-14 lg:pt-12">
-          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-900 sm:px-10 lg:px-0">
+          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-400 sm:px-10 lg:px-0">
             Confidential enterprise project · Visuals cannot be shared publicly
             · UX process documented
           </p>

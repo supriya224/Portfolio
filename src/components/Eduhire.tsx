@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
 /* =========================================================
    TYPES
 ========================================================= */
@@ -180,15 +181,18 @@ export default function EduHire() {
         ================================================= */}
 
         <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-32 sm:pt-24 lg:px-14">
+            <p className="text-[12px] font-medium pb-2  tracking-[0.14em] text-red-400">
+              AI · E-Learning · Pending images
+            </p>
           <Reveal>
             <div className="flex items-center justify-between">
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
                 Case Study / 01
               </p>
 
-              <p className="text-[12px] text-neutral-400">
-                EduHire
-              </p>
+              <Link to="https://www.figma.com/design/gD7WTRylKSftCvHBxLXdO5/Edu-app?t=Vv3SKkRNoSKWEg8W-0" className="text-[12px] text-neutral-400  border-b border-neutral-400 transition-colors duration-300 hover:text-neutral-950 hover:border-neutral-950 dark:hover:text-white dark:hover:border-white">
+                View:  EduHire
+              </Link>
             </div>
           </Reveal>
 

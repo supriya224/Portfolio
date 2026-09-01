@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
   ArrowDown,
   ArrowUpRight,
@@ -47,7 +49,7 @@ export default function FoodSafety() {
             HERO
         ====================================================== */}
         <section className="border-b border-black/[0.08] px-6 pb-20 pt-24 dark:border-white/[0.08] sm:px-10 sm:pb-28 sm:pt-32 lg:px-16">
-          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-900 sm:px-10 lg:px-0">
+          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-400 sm:px-10 lg:px-0">
             Personal fintech exploration · AI-powered spending, savings, and
             financial insights · Design in progress,
           </p>
@@ -58,20 +60,19 @@ export default function FoodSafety() {
                 ERP · SmartFoodSafe · Dashboard
               </h3>
             </p>
-
+            <div>
+            <Link
+              to="https://www.figma.com/design/QoRUE76kIbsfC1Cg25Hl1X/Food-safety-dashboard?node-id=0-1&p=f&t=cGhyBPxpueetd8b9-0"
+              className="text-[12px] text-neutral-400  border-b border-neutral-400 transition-colors duration-300 hover:text-neutral-950 hover:border-neutral-950 dark:hover:text-white dark:hover:border-white">
+              View: Food Safety Dashboard
+            </Link>
+            <br />
             <span className="text-xs uppercase tracking-[0.16em] text-neutral-400">
               UX/UI Case Study
             </span>
+            </div>
           </div>
-          {/* <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-              SmartFoodSafe
-            </p>
-
-            <span className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-              UX/UI Case Study
-            </span>
-          </div> */}
+     
 
           <div className="mt-24 max-w-5xl">
             <h1 className="font-serif text-5xl leading-[0.95] tracking-[-0.045em] sm:text-7xl lg:text-[92px]">

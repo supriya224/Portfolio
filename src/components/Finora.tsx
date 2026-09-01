@@ -399,7 +399,7 @@ export default function Paymi() {
         ================================================= */}
 
         <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:px-14">
-            <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-900 sm:px-10 lg:px-0">
+            <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-400 sm:px-10 lg:px-0">
             Personal fintech exploration · AI-powered spending, savings, and financial insights · Design in progress,
           </p>
           <Reveal>
