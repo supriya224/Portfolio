@@ -8,6 +8,7 @@ import EduHire from "./components/Eduhire";
 import Finora from "./components/Finora";
 import SelectedWork from "./pages/Selected.Page";
 import FoodSafety from "./components/Food";
+import AboutPage from "./pages/About.page";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/eduhire" element={<EduHire />} />
         <Route path="/finora" element={<Finora />} />
         <Route path="/food" element={<FoodSafety />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   );

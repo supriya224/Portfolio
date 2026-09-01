@@ -7,7 +7,7 @@ import {
   Flame,
   MapPin,
   ShieldAlert,
-  WifiOff,
+  WifiOff
 } from "lucide-react";
 
 /* =========================================================
@@ -18,23 +18,23 @@ const stats = [
   {
     label: "Detection",
     value: "Fire",
-    icon: Flame,
+    icon: Flame
   },
   {
     label: "Location",
     value: "Zone B · Floor 2",
-    icon: MapPin,
+    icon: MapPin
   },
   {
     label: "Camera",
     value: "CAM-024",
-    icon: Camera,
+    icon: Camera
   },
   {
     label: "Status",
     value: "Active",
-    icon: ShieldAlert,
-  },
+    icon: ShieldAlert
+  }
 ];
 
 const edgeCases = [
@@ -42,44 +42,36 @@ const edgeCases = [
     title: "No active alert",
     description:
       "The dashboard clearly communicates that the facility is clear instead of leaving an ambiguous empty state.",
-    icon: CheckCircle2,
+    icon: CheckCircle2
   },
   {
     title: "Camera offline",
     description:
       "Disconnected cameras are surfaced as a system state so missing information is not mistaken for a clear environment.",
-    icon: WifiOff,
+    icon: WifiOff
   },
   {
     title: "Multiple alerts",
     description:
       "Different incidents remain distinguishable by location, type, severity and status.",
-    icon: ShieldAlert,
+    icon: ShieldAlert
   },
   {
     title: "Historical incidents",
     description:
       "Resolved events remain available through detection history for investigation and review.",
-    icon: Clock3,
-  },
+    icon: Clock3
+  }
 ];
 
 /* =========================================================
    SECTION NUMBER
 ========================================================= */
 
-function SectionNumber({
-  number,
-  label,
-}: {
-  number: string;
-  label: string;
-}) {
+function SectionNumber({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex items-center gap-4">
-      <span className="font-mono text-[12px] text-neutral-400">
-        {number}
-      </span>
+      <span className="font-mono text-[12px] text-neutral-400">{number}</span>
 
       <span className="text-[12px] font-medium uppercase tracking-[0.16em] text-neutral-400 sm:text-[13px]">
         {label}
@@ -94,7 +86,7 @@ function SectionNumber({
 
 function Reveal({
   children,
-  className = "",
+  className = ""
 }: {
   children: React.ReactNode;
   className?: string;
@@ -119,7 +111,7 @@ function Reveal({
         }
       },
       {
-        threshold: 0.12,
+        threshold: 0.12
       }
     );
 
@@ -134,11 +126,8 @@ function Reveal({
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${
-        visible
-          ? "translate-y-0 opacity-100"
-          : "translate-y-8 opacity-0"
-      } ${className}`}
-    >
+        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      } ${className}`}>
       {children}
     </div>
   );
@@ -155,7 +144,7 @@ function FloorMap() {
     { left: "69%", top: "36%", active: false },
     { left: "31%", top: "65%", active: false },
     { left: "56%", top: "65%", active: false },
-    { left: "76%", top: "65%", active: false },
+    { left: "76%", top: "65%", active: false }
   ];
 
   return (
@@ -166,7 +155,7 @@ function FloorMap() {
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          backgroundSize: "32px 32px"
         }}
       />
 
@@ -202,18 +191,13 @@ function FloorMap() {
         <div
           key={`${camera.left}-${camera.top}`}
           className={`absolute h-2.5 w-2.5 rounded-full border-2 border-white shadow-sm sm:h-3 sm:w-3 ${
-            camera.active
-              ? "animate-pulse bg-red-500"
-              : "bg-neutral-500"
+            camera.active ? "animate-pulse bg-red-500" : "bg-neutral-500"
           }`}
           style={{
             left: camera.left,
-            top: camera.top,
-          }}
-        >
-          <span className="sr-only">
-            Camera {index + 1}
-          </span>
+            top: camera.top
+          }}>
+          <span className="sr-only">Camera {index + 1}</span>
         </div>
       ))}
 
@@ -268,17 +252,19 @@ export default function Fire() {
   return (
     <div className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-neutral-100">
       {/* Page rails */}
-      <div className="mx-auto min-h-screen w-full max-w-[1180px] border-x border-black/[0.06] dark:border-white/[0.07]">
-
+      <div className="mx-auto min-h-screen w-full max-w-[1200px] border-x border-black/[0.06] dark:border-white/[0.07]">
         {/* =================================================
             HERO
         ================================================= */}
 
-        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:px-14 lg:pt-28">
+        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:px-14 lg:pt-12">
+          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-900 sm:px-10 lg:px-0">
+            Confidential enterprise project · Visuals cannot be shared publicly
+            · UX process documented
+          </p>
           <Reveal>
             <div className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-neutral-400 sm:text-[13px]">
               <span className="h-2 w-2 rounded-full bg-red-500" />
-
               Fire & Smoke Detection
             </div>
           </Reveal>
@@ -291,10 +277,9 @@ export default function Fire() {
 
           <Reveal className="mt-7 max-w-[680px] sm:mt-8">
             <p className="text-[17px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[20px] sm:leading-8">
-              A fire and smoke monitoring dashboard redesigned
-              around the physical environment — helping employees
-              understand where an incident is happening, what was
-              detected and what needs attention.
+              A fire and smoke monitoring dashboard redesigned around the
+              physical environment — helping employees understand where an
+              incident is happening, what was detected and what needs attention.
             </p>
           </Reveal>
 
@@ -336,9 +321,7 @@ export default function Fire() {
                   Platform
                 </p>
 
-                <p className="mt-2 text-[13px] sm:text-[15px]">
-                  Desktop
-                </p>
+                <p className="mt-2 text-[13px] sm:text-[15px]">Desktop</p>
               </div>
             </div>
           </Reveal>
@@ -357,10 +340,7 @@ export default function Fire() {
 
         <section className="border-t border-black/[0.08] px-5 py-24 dark:border-white/[0.08] sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="01"
-              label="The problem"
-            />
+            <SectionNumber number="01" label="The problem" />
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-12">
               <h2 className="font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[52px]">
@@ -371,16 +351,14 @@ export default function Fire() {
 
               <div className="space-y-5 text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
                 <p>
-                  The initial dashboard could tell an employee that
-                  an alert had been triggered, but it didn't help
-                  them quickly understand where the incident was or
-                  how serious it was.
+                  The initial dashboard could tell an employee that an alert had
+                  been triggered, but it didn't help them quickly understand
+                  where the incident was or how serious it was.
                 </p>
 
                 <p>
-                  The employee still had to connect the alert with a
-                  camera and then determine where that camera was
-                  physically located.
+                  The employee still had to connect the alert with a camera and
+                  then determine where that camera was physically located.
                 </p>
 
                 <p className="font-medium text-neutral-950 dark:text-neutral-100">
@@ -397,10 +375,7 @@ export default function Fire() {
 
         <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="02"
-              label="The insight"
-            />
+            <SectionNumber number="02" label="The insight" />
 
             <div className="mt-10 max-w-[900px]">
               <p className="font-serif text-[38px] leading-[1.1] tracking-[-0.035em] sm:text-[54px]">
@@ -410,10 +385,9 @@ export default function Fire() {
               </p>
 
               <p className="mt-7 max-w-[680px] text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
-                Instead of making the alert more prominent, I changed
-                the central concept of the dashboard. The interface
-                needed to connect the detection directly to the
-                physical environment.
+                Instead of making the alert more prominent, I changed the
+                central concept of the dashboard. The interface needed to
+                connect the detection directly to the physical environment.
               </p>
             </div>
           </Reveal>
@@ -426,10 +400,7 @@ export default function Fire() {
         <section className="border-y border-black/[0.08] py-24 dark:border-white/[0.08] sm:py-28">
           <div className="px-5 sm:px-8 lg:px-14">
             <Reveal>
-              <SectionNumber
-                number="03"
-                label="The solution"
-              />
+              <SectionNumber number="03" label="The solution" />
 
               <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-12">
                 <h2 className="font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[52px]">
@@ -439,11 +410,10 @@ export default function Fire() {
                 </h2>
 
                 <p className="text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
-                  I introduced a floor-map experience with camera
-                  locations, allowing an active detection to be
-                  understood in its physical context. Supporting
-                  information was structured around the questions an
-                  employee needs to answer immediately.
+                  I introduced a floor-map experience with camera locations,
+                  allowing an active detection to be understood in its physical
+                  context. Supporting information was structured around the
+                  questions an employee needs to answer immediately.
                 </p>
               </div>
             </Reveal>
@@ -457,8 +427,7 @@ export default function Fire() {
                   return (
                     <div
                       key={stat.label}
-                      className="group border-b border-r border-black/[0.08] p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:border-white/[0.08] dark:hover:bg-[#191919] sm:p-7"
-                    >
+                      className="group border-b border-r border-black/[0.08] p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:border-white/[0.08] dark:hover:bg-[#191919] sm:p-7">
                       <Icon
                         size={18}
                         strokeWidth={1.5}
@@ -486,10 +455,7 @@ export default function Fire() {
 
         <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="04"
-              label="The experience"
-            />
+            <SectionNumber number="04" label="The experience" />
 
             <h2 className="mt-10 max-w-[850px] font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[54px]">
               A clearer path from detection to investigation.
@@ -500,32 +466,29 @@ export default function Fire() {
                 {
                   number: "01",
                   title: "Live dashboard",
-                  description:
-                    "See the facility state and active incidents.",
+                  description: "See the facility state and active incidents."
                 },
                 {
                   number: "02",
                   title: "Location",
-                  description:
-                    "Identify the affected floor, zone and camera.",
+                  description: "Identify the affected floor, zone and camera."
                 },
                 {
                   number: "03",
                   title: "Incident",
                   description:
-                    "Understand type, severity, confidence and status.",
+                    "Understand type, severity, confidence and status."
                 },
                 {
                   number: "04",
                   title: "History",
                   description:
-                    "Investigate previous detections and camera activity.",
-                },
+                    "Investigate previous detections and camera activity."
+                }
               ].map((item) => (
                 <div
                   key={item.number}
-                  className="border-b border-r border-black/[0.08] p-6 transition-colors duration-300 hover:bg-black/[0.02] dark:border-white/[0.08] dark:hover:bg-white/[0.02] sm:p-7"
-                >
+                  className="border-b border-r border-black/[0.08] p-6 transition-colors duration-300 hover:bg-black/[0.02] dark:border-white/[0.08] dark:hover:bg-white/[0.02] sm:p-7">
                   <span className="font-mono text-[11px] text-neutral-400">
                     {item.number}
                   </span>
@@ -549,10 +512,7 @@ export default function Fire() {
 
         <section className="border-t border-black/[0.08] px-5 py-24 dark:border-white/[0.08] sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="05"
-              label="Edge cases"
-            />
+            <SectionNumber number="05" label="Edge cases" />
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[0.8fr_2fr] lg:gap-12">
               <h2 className="font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[52px]">
@@ -566,8 +526,7 @@ export default function Fire() {
                   return (
                     <div
                       key={item.title}
-                      className="group bg-[#f7f5f2] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:bg-[#111111] dark:hover:bg-[#191919] sm:p-7"
-                    >
+                      className="group bg-[#f7f5f2] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:bg-[#111111] dark:hover:bg-[#191919] sm:p-7">
                       <Icon
                         size={19}
                         strokeWidth={1.5}
@@ -595,10 +554,7 @@ export default function Fire() {
 
         <section className="border-t border-black/[0.08] px-5 py-24 dark:border-white/[0.08] sm:px-8 sm:py-28 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="06"
-              label="Trade-offs"
-            />
+            <SectionNumber number="06" label="Trade-offs" />
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-12">
               <h2 className="font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[52px]">
@@ -609,22 +565,20 @@ export default function Fire() {
 
               <div className="space-y-5 text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
                 <p>
-                  Monitoring products can easily become overloaded
-                  with metrics, statuses and camera information.
+                  Monitoring products can easily become overloaded with metrics,
+                  statuses and camera information.
                 </p>
 
                 <p>
-                  I prioritized the information needed for immediate
-                  response:{" "}
+                  I prioritized the information needed for immediate response:{" "}
                   <strong className="text-neutral-950 dark:text-white">
-                    location, incident type, severity, camera, time
-                    and status.
+                    location, incident type, severity, camera, time and status.
                   </strong>
                 </p>
 
                 <p>
-                  Deeper information moved into supporting views such
-                  as camera status and detection history.
+                  Deeper information moved into supporting views such as camera
+                  status and detection history.
                 </p>
               </div>
             </div>
@@ -637,23 +591,19 @@ export default function Fire() {
 
         <section className="border-t border-black/[0.08] px-5 py-28 dark:border-white/[0.08] sm:px-8 sm:py-32 lg:px-14">
           <Reveal>
-            <SectionNumber
-              number="07"
-              label="What I learned"
-            />
+            <SectionNumber number="07" label="What I learned" />
 
             <div className="mt-10 max-w-[1000px]">
               <blockquote className="font-serif text-[36px] leading-[1.12] tracking-[-0.035em] sm:text-[54px]">
-                “The most important information isn't always the
-                information that's easiest to display.”
+                “The most important information isn't always the information
+                that's easiest to display.”
               </blockquote>
 
               <p className="mt-8 max-w-[700px] text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:mt-10 sm:text-[18px] sm:leading-8">
-                For operational products, I learned to start with the
-                decision the user needs to make immediately after
-                seeing the information. That shift helped me design
-                the interface around action rather than simply
-                displaying system output.
+                For operational products, I learned to start with the decision
+                the user needs to make immediately after seeing the information.
+                That shift helped me design the interface around action rather
+                than simply displaying system output.
               </p>
             </div>
           </Reveal>
@@ -667,8 +617,7 @@ export default function Fire() {
           <Reveal>
             <a
               href="/work"
-              className="group flex items-center justify-between gap-6"
-            >
+              className="group flex items-center justify-between gap-6">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-400 sm:text-[13px]">
                   Back to

@@ -387,9 +387,10 @@ function UsersIcon() {
    MAIN
 ========================================================= */
 
-export default function Finora() {
+export default function Paymi() {
   return (
     <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 dark:bg-[#111111] dark:text-neutral-100">
+
 
       <div className="mx-auto w-full max-w-[1180px] border-x border-black/[0.07] dark:border-white/[0.07]">
 
@@ -397,7 +398,10 @@ export default function Finora() {
             HERO
         ================================================= */}
 
-        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-32 sm:pt-24 lg:px-14">
+        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:px-14">
+            <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-900 sm:px-10 lg:px-0">
+            Personal fintech exploration · AI-powered spending, savings, and financial insights · Design in progress,
+          </p>
           <Reveal>
             <div className="flex items-center justify-between">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">
@@ -405,12 +409,12 @@ export default function Finora() {
               </p>
 
               <p className="text-[12px] text-neutral-400">
-                Finora
+                Paymi
               </p>
             </div>
           </Reveal>
 
-          <Reveal className="mt-16 sm:mt-20">
+          <Reveal className="mt-16 sm:mt-6">
             <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-neutral-400">
               AI · Fintech · Personal Finance
             </p>
@@ -479,7 +483,7 @@ export default function Finora() {
 
           <Reveal className="mt-12 sm:mt-16">
             <Wireframe
-              title="Finora / Financial overview"
+              title="Paymi / Financial overview"
               type="dashboard"
               aspect="aspect-[16/9]"
             />
@@ -507,7 +511,7 @@ export default function Finora() {
 
             <div className="mt-10 grid gap-10 lg:grid-cols-[0.8fr_1.5fr] lg:gap-16">
               <h2 className="font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[54px]">
-                Financial apps show data. Finora tries to explain
+                Financial apps show data. Paymi tries to explain
                 it.
               </h2>
 
@@ -527,7 +531,7 @@ export default function Finora() {
                 </p>
 
                 <p>
-                  Instead of stopping at “you spent ₹52,000,” Finora
+                  Instead of stopping at “you spent ₹52,000,” Paymi
                   should help answer: Where did it go? Is that normal?
                   Can I afford something? What should I change?
                 </p>
@@ -816,7 +820,7 @@ export default function Finora() {
                 </h2>
 
                 <p className="text-[17px] leading-8 text-neutral-500 dark:text-neutral-400 sm:text-[19px]">
-                  Finora brings transactions, spending patterns,
+                  Paymi brings transactions, spending patterns,
                   goals and upcoming expenses together, then adds
                   an AI layer that explains the information and
                   recommends possible actions.
@@ -1054,7 +1058,7 @@ export default function Finora() {
 
                 <p>
                   A user can ask something as simple as “Can I
-                  afford a ₹25,000 trip next month?” and Finora
+                  afford a ₹25,000 trip next month?” and Paymi
                   considers current savings, upcoming bills, goals,
                   income and emergency reserves before explaining
                   the trade-off.
@@ -1250,7 +1254,7 @@ export default function Finora() {
 
                 <p className="text-[17px] leading-8 text-neutral-500 dark:text-neutral-400 sm:text-[19px]">
                   Users still need transaction-level detail.
-                  Finora keeps that layer simple while using
+                  Paymi keeps that layer simple while using
                   categories and patterns to make the information
                   easier to understand.
                 </p>
@@ -1429,7 +1433,7 @@ export default function Finora() {
                 </h2>
 
                 <p className="text-[17px] leading-8 text-neutral-500 dark:text-neutral-400 sm:text-[19px]">
-                  Finora's financial health score combines areas
+                  Paymi's financial health score combines areas
                   such as savings, spending, debt, emergency
                   preparedness and investments. The important part
                   is the explanation behind the score.
@@ -1523,7 +1527,7 @@ export default function Finora() {
 
                 <div>
                   <p className="text-[17px] leading-8 text-neutral-500 dark:text-neutral-400 sm:text-[19px]">
-                    Since Finora deals with financial information,
+                    Since Paymi deals with financial information,
                     trust becomes part of the UX rather than an
                     afterthought.
                   </p>
@@ -1586,7 +1590,7 @@ export default function Finora() {
                 {
                   number: "02",
                   title: "Understand",
-                  text: "Finora organizes transactions and spending patterns.",
+                  text: "Paymi organizes transactions and spending patterns.",
                 },
                 {
                   number: "03",
@@ -1856,7 +1860,7 @@ export default function Finora() {
               </h2>
 
               <p className="mt-8 max-w-[750px] text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
-                Finora became an exploration of how AI can sit
+                Paymi became an exploration of how AI can sit
                 between financial data and everyday decisions. The
                 strongest opportunities were not about adding more
                 charts, but about giving users context: why their
@@ -1876,7 +1880,7 @@ export default function Finora() {
             <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-neutral-400">
-                  Finora
+                  Paymi
                 </p>
 
                 <p className="mt-3 font-serif text-[34px] tracking-[-0.035em] sm:text-[42px]">
@@ -1900,6 +1904,7 @@ export default function Finora() {
           </Reveal>
         </section>
       </div>
+      
     </main>
   );
 }

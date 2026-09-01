@@ -13,7 +13,7 @@ const selectedProjects = [
   },
   {
     number: "02",
-    title: "Paylo",
+    title: "Paymi",
     description:
       "An AI-powered fintech experience helping users understand spending, saving and financial decisions.",
     category: "AI · Fintech",
@@ -35,7 +35,7 @@ const selectedProjects = [
     description:
       "Designing a smarter hiring experience for discovering and evaluating candidates.",
     category: "AI · Product Design",
-    image: "/edu.png",
+    image: "/Edu.png",
     link: "/eduhire",
   },
 ];

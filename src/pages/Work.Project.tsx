@@ -20,14 +20,14 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "AI Hiring Platform",
+    title: "AI Tool Website",
     category: CATEGORY.WEB,
-    image: "/fintech.png",
+    image: "/AI.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=12-13565&p=f",
   },
   {
     id: 2,
-    title: "Fintech App",
+    title: "Finance App Redesign",
     category: CATEGORY.MOBILE_APP,
     image: "/finura copy.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=28-5244&p=f",
@@ -43,37 +43,31 @@ const projects: Project[] = [
     id: 4,
     title: "Fashion Website",
     category: CATEGORY.WEB,
-    image: "/Skincare.png",
+    image: "/Fashion.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=12-10682",
   },
   {
     id: 5,
-    title: "EduHire",
-    category: CATEGORY.CASE_STUDY,
-    image: "/Edu.png",
-    link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=12-10337",
-  },
-  {
-    id: 6,
     title: "Skincare Website",
     category: CATEGORY.WEB,
     image: "/Skincare.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=12-10337",
   },
   {
-    id: 7,
+    id: 6,
     title: "Text To Speak",
     category: CATEGORY.CASE_STUDY,
     image: "/Text.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=1-345",
   },
   {
-    id: 8,
+    id: 7,
     title: "Jewelry App",
     category: CATEGORY.MOBILE_APP,
     image: "/Lumera.png",
     link: "https://www.figma.com/design/uCCI3aLXDFuIWuUTV77e2k/portolfio?node-id=1-8932",
   },
+ 
 ];
 
 const categories: Category[] = [
