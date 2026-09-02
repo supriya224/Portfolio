@@ -37,8 +37,8 @@ const experiences = [
     company: "Advitiix Technovate",
     role: "UX/UI & Product Designer",
     period: "Oct 2025 — Present",
-    Description:" Working as a solo designer across multiple client projects, designing dashboards and web applications from early concepts to final implementation. I handle UX flows, UI design, design systems, and collaborate directly with clients and developers to turn complex requirements into clear, usable products."
-
+    Description:
+      " Working as a solo designer across multiple client projects, designing dashboards and web applications from early concepts to final implementation. I handle UX flows, UI design, design systems, and collaborate directly with clients and developers to turn complex requirements into clear, usable products."
   },
   {
     company: "Central Data Storage",
@@ -102,7 +102,7 @@ function ExperienceRow({
   company,
   role,
   period,
-   Description
+  Description
 }: {
   company: string;
   role: string;
@@ -120,7 +120,7 @@ function ExperienceRow({
       </div>
 
       <p className="text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-      {Description}
+        {Description}
       </p>
 
       <p className="text-sm text-neutral-400 sm:text-right">{period}</p>
@@ -136,21 +136,20 @@ export default function HomePage() {
         {/* HERO */}
         <section className="px-6 pb-28 pt-24 sm:px-10 sm:pb-36 sm:pt-24 lg:px-16">
           <div className="flex max-w-4xl items-start gap-3">
-            <span className="mt-3 h-2 w-2 rounded-full bg-neutral-950 dark:bg-white" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-neutral-950 dark:bg-white" />
 
             <p className="text-sm uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-400">
-              Product Designer · UX/UI
+              Product Designer · UX/UI · Problem Solver · Vibe coder
             </p>
           </div>
 
-          <h1 className="mt-10 max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.055em] sm:text-8xl lg:text-[110px]">
-            I design digital
+          <h1 className="mt-10 max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.055em] sm:text-8xl lg:text-[80px]">
+            I think like a designer,
             <br />
-            products that
+            Build like a developer,
             <br />
-            make sense.
+            and solve like a product person
           </h1>
-
           <div className="mt-12 grid gap-10 sm:grid-cols-[1fr_280px] sm:items-end">
             <p className="max-w-2xl text-xl leading-8 text-neutral-500 dark:text-neutral-400 sm:text-2xl">
               I&apos;m a product designer focused on turning complex problems

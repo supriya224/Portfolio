@@ -159,7 +159,7 @@ export default function AboutPage() {
             HERO
         ====================================================== */}
 
-        <section className="px-6 pb-24 pt-24 sm:px-10 sm:pt-32 lg:px-16 lg:pb-32">
+        <section className="px-6 pb-24 pt-24 sm:px-10 sm:pt-24 lg:px-16 lg:pb-32">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
             {/* Left — Content */}
             <div className="max-w-3xl">
@@ -167,20 +167,16 @@ export default function AboutPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 About
               </div>
-
-              <h1 className="mt-8 font-serif text-5xl leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[76px]">
-                Product designer
-                <br />
-                who thinks in systems,
-                <br />
-                not just screens.
+              <h1 className="mt-8 font-serif text-5xl leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[60px]">
+                I turn complex problems
+  
+                into clear products -  and design with code in mind.
               </h1>
-
+      
               <p className="mt-8 max-w-2xl text-xl leading-8 text-neutral-500 dark:text-neutral-400 sm:text-2xl sm:leading-9">
                 I design digital products that make complex problems easier to
                 understand, use, and solve.
               </p>
-
               <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4 text-sm text-neutral-400">
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" strokeWidth={1.5} />
