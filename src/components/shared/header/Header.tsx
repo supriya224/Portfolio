@@ -132,7 +132,7 @@ export default function Header() {
 
             {/* Resume */}
             <a
-              href="https://drive.google.com/file/d/1QL32lJG0s-ZX1a4QPFa6FSlqkQquSijF/view?usp=sharing"
+              href="https://drive.google.com/file/d/1cBwhw5THtlLPja5_uvPJP6Hvhx0leL4G/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View resume"
