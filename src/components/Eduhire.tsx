@@ -26,6 +26,7 @@ type RevealProps = {
 type ImagePlaceholderProps = {
   label: string;
   aspect?: string;
+  src?: string;
 };
 
 /* =========================================================
@@ -115,24 +116,22 @@ function SectionLabel({
 function ImagePlaceholder({
   label,
   aspect = "aspect-[16/10]",
+  src = "/Edu.png",
 }: ImagePlaceholderProps) {
   return (
     <div
       className={`relative ${aspect} overflow-hidden border border-black/[0.08] bg-[#eeece8] dark:border-white/[0.08] dark:bg-[#1b1b1b]`}
     >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-black/[0.1] text-neutral-400 dark:border-white/[0.1]">
-            <FileText
-              size={17}
-              strokeWidth={1.4}
-            />
-          </div>
-
-          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-neutral-400">
-            {label}
-          </p>
-        </div>
+      <img
+        src={src}
+        alt={label}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent px-5 pb-4 pt-12">
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/90">
+          {label}
+        </p>
       </div>
     </div>
   );
@@ -182,7 +181,7 @@ export default function EduHire() {
 
         <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-32 sm:pt-24 lg:px-14">
             <p className="text-[12px] font-medium pb-2  tracking-[0.14em] text-red-400">
-              AI · E-Learning · Pending images
+              AI · E-Learning · Career
             </p>
           <Reveal>
             <div className="flex items-center justify-between">
@@ -1047,6 +1046,52 @@ export default function EduHire() {
               />
             </div>
           </Reveal>
+        </section>
+
+
+        {/* =================================================
+            FIGMA GALLERY
+        ================================================= */}
+
+        <section className="border-y border-black/[0.08] py-24 dark:border-white/[0.08] sm:py-28">
+          <div className="px-5 sm:px-8 lg:px-14">
+            <Reveal>
+              <SectionLabel number="11.5" label="Full visual gallery" />
+
+              <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2 className="max-w-[850px] font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[54px]">
+                    Explore the complete EduHire design.
+                  </h2>
+                  <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
+                    The complete Figma file contains the full screen library, flows,
+                    onboarding, learning experience, AI assistant, payments and edge cases.
+                  </p>
+                </div>
+
+                <a
+                  href="https://www.figma.com/design/gD7WTRylKSftCvHBxLXdO5/Edu-app?node-id=4-2005"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex shrink-0 items-center gap-2 border-b border-neutral-400 pb-1 text-[12px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:border-neutral-950 hover:text-neutral-950 dark:hover:border-white dark:hover:text-white"
+                >
+                  Open full Figma
+                  <ArrowUpRight size={15} strokeWidth={1.4} />
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal className="mt-12">
+              <div className="overflow-hidden border border-black/[0.08] bg-white dark:border-white/[0.08] dark:bg-[#191919]">
+                <iframe
+                  title="EduHire complete Figma design"
+                  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FgD7WTRylKSftCvHBxLXdO5%2FEdu-app%3Fnode-id%3D4-2005"
+                  className="h-[620px] w-full border-0 sm:h-[760px]"
+                  allowFullScreen
+                />
+              </div>
+            </Reveal>
+          </div>
         </section>
 
         {/* =================================================
