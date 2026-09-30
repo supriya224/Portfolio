@@ -6,7 +6,6 @@ import {
   Check,
   ChevronRight,
   Clock3,
-  FileText,
   Layers3,
   Search,
   Smartphone,
