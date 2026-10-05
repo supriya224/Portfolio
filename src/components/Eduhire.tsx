@@ -22,14 +22,6 @@ type RevealProps = {
   className?: string;
 };
 
-<<<<<<< Updated upstream
-type ImagePlaceholderProps = {
-  label: string;
-  aspect?: string;
-  src?: string;
-};
-=======
->>>>>>> Stashed changes
 
 /* =========================================================
    REVEAL ANIMATION
@@ -98,38 +90,6 @@ function SectionLabel({ number, label }: { number: string; label: string }) {
   );
 }
 
-<<<<<<< Updated upstream
-/* =========================================================
-   IMAGE PLACEHOLDER
-
-   Replace this component with your actual image when ready.
-========================================================= */
-
-function ImagePlaceholder({
-  label,
-  aspect = "aspect-[16/10]",
-  src = "/Edu.png",
-}: ImagePlaceholderProps) {
-  return (
-    <div
-      className={`relative ${aspect} overflow-hidden border border-black/[0.08] bg-[#eeece8] dark:border-white/[0.08] dark:bg-[#1b1b1b]`}
-    >
-      <img
-        src={src}
-        alt={label}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent px-5 pb-4 pt-12">
-        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/90">
-          {label}
-        </p>
-      </div>
-    </div>
-  );
-}
-=======
->>>>>>> Stashed changes
 
 /* =========================================================
    STAT
@@ -166,13 +126,8 @@ export default function EduHire() {
         ================================================= */}
 
         <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-32 sm:pt-24 lg:px-14">
-<<<<<<< Updated upstream
-            <p className="text-[12px] font-medium pb-2  tracking-[0.14em] text-red-400">
-              AI · E-Learning · Career
-            </p>
-=======
         
->>>>>>> Stashed changes
+
           <Reveal>
             <div className="flex items-center justify-between">
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
