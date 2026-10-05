@@ -33,13 +33,6 @@ function Wireframe({ title, children }: WireframeProps) {
     </div>
   );
 }
-function Block({ className = "" }: { className?: string }) {
-  return (
-    <div
-      className={`rounded-md bg-neutral-200/80 dark:bg-neutral-700/60 ${className}`}
-    />
-  );
-}
 
 export default function FoodSafety() {
   return (
@@ -49,10 +42,7 @@ export default function FoodSafety() {
             HERO
         ====================================================== */}
         <section className="border-b border-black/[0.08] px-6 pb-20 pt-24 dark:border-white/[0.08] sm:px-10 sm:pb-28 sm:pt-32 lg:px-16">
-          <p className="max-w-3xl px-6 pb-6 text-sm leading-6 text-red-400 sm:px-10 lg:px-0">
-            Personal fintech exploration · AI-powered spending, savings, and
-            financial insights · Design in progress,
-          </p>
+        
           <div className="flex items-center justify-between">
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">
               Case Study / 03 <br />
@@ -351,92 +341,21 @@ export default function FoodSafety() {
           {/* WIREFRAME 01 */}
           <div className="mt-14">
             <Wireframe title="Dashboard">
-              <div className="grid h-full grid-cols-[150px_1fr] gap-5">
+              {/* <div className="grid h-full grid-cols-[150px_1fr] gap-5"> */}
                 {/* Sidebar */}
-                <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-[#181818]">
-                  <Block className="h-5 w-24" />
-
-                  <div className="mt-8 space-y-3">
-                    <Block className="h-7 w-full" />
-                    <Block className="h-7 w-full" />
-                    <Block className="h-7 w-full" />
-                    <Block className="h-7 w-full" />
-                    <Block className="h-7 w-full" />
-                  </div>
-                </div>
-
-                {/* Main */}
-                <div>
-                  <div className="flex justify-between">
-                    <Block className="h-7 w-44" />
-                    <Block className="h-7 w-28" />
-                  </div>
-
-                  <div className="mt-5 grid grid-cols-4 gap-3">
-                    <Block className="h-20" />
-                    <Block className="h-20" />
-                    <Block className="h-20" />
-                    <Block className="h-20" />
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-[1.5fr_1fr] gap-4">
-                    <Block className="h-52" />
-                    <Block className="h-52" />
-                  </div>
-
-                  <Block className="mt-4 h-28 w-full" />
-                </div>
-              </div>
+               <img src="Food-Moc.png" alt="" />
+              {/* </div> */}
             </Wireframe>
           </div>
 
           {/* WIREFRAME 02 */}
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
             <Wireframe title="Supplier Management">
-              <div className="flex gap-4">
-                <div className="w-32 space-y-3">
-                  <Block className="h-6 w-24" />
-                  <Block className="h-8 w-full" />
-                  <Block className="h-8 w-full" />
-                  <Block className="h-8 w-full" />
-                  <Block className="h-8 w-full" />
-                </div>
-
-                <div className="flex-1">
-                  <Block className="h-9 w-full" />
-
-                  <div className="mt-5 space-y-2">
-                    {[1, 2, 3, 4, 5, 6].map((row) => (
-                      <div key={row} className="grid grid-cols-4 gap-3">
-                        <Block className="h-8" />
-                        <Block className="h-8" />
-                        <Block className="h-8" />
-                        <Block className="h-8" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+         <img src="Food-Moc-1.png" alt="" />
             </Wireframe>
 
             <Wireframe title="Query Detail">
-              <div className="grid grid-cols-[1fr_170px] gap-4">
-                <div>
-                  <Block className="h-7 w-52" />
-
-                  <Block className="mt-5 h-20 w-full" />
-
-                  <Block className="mt-4 h-20 w-full" />
-
-                  <Block className="mt-4 h-28 w-full" />
-                </div>
-
-                <div className="space-y-3">
-                  <Block className="h-24" />
-                  <Block className="h-24" />
-                  <Block className="h-24" />
-                </div>
-              </div>
+      <img src="Food-Moc-2.png" alt="" />
             </Wireframe>
           </div>
         </section>
