@@ -871,51 +871,6 @@ export default function EduHire() {
 
 
         {/* =================================================
-            FIGMA GALLERY
-        ================================================= */}
-
-        <section className="border-y border-black/[0.08] py-24 dark:border-white/[0.08] sm:py-28">
-          <div className="px-5 sm:px-8 lg:px-14">
-            <Reveal>
-              <SectionLabel number="11.5" label="Full visual gallery" />
-
-              <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h2 className="max-w-[850px] font-serif text-[38px] leading-[1.05] tracking-[-0.035em] sm:text-[54px]">
-                    Explore the complete EduHire design.
-                  </h2>
-                  <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-neutral-500 dark:text-neutral-400 sm:text-[18px] sm:leading-8">
-                    The complete Figma file contains the full screen library, flows,
-                    onboarding, learning experience, AI assistant, payments and edge cases.
-                  </p>
-                </div>
-
-                <a
-                  href="https://www.figma.com/design/gD7WTRylKSftCvHBxLXdO5/Edu-app?node-id=4-2005"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex shrink-0 items-center gap-2 border-b border-neutral-400 pb-1 text-[12px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:border-neutral-950 hover:text-neutral-950 dark:hover:border-white dark:hover:text-white"
-                >
-                  Open full Figma
-                  <ArrowUpRight size={15} strokeWidth={1.4} />
-                </a>
-              </div>
-            </Reveal>
-
-            <Reveal className="mt-12">
-              <div className="overflow-hidden border border-black/[0.08] bg-white dark:border-white/[0.08] dark:bg-[#191919]">
-                <iframe
-                  title="EduHire complete Figma design"
-                  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FgD7WTRylKSftCvHBxLXdO5%2FEdu-app%3Fnode-id%3D4-2005"
-                  className="h-[620px] w-full border-0 sm:h-[760px]"
-                  allowFullScreen
-                />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* =================================================
             HIGH FIDELITY
         ================================================= */}
 
