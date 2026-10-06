@@ -6,6 +6,7 @@ import {
   Check,
   CircleAlert,
   FileText,
+  ArrowLeft,
   Search,
   ShieldCheck,
   Users
@@ -38,10 +39,26 @@ export default function FoodSafety() {
   return (
     <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
       <div className="mx-auto max-w-[1200px] border-x border-black/[0.08] dark:border-white/[0.08]">
+
+
+        <section className=" pb-2 pt-8 sm:px-10 sm:pb-12 sm:pt-10  ">
+          <Link
+            to="/selected-work"
+            className="group inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-950 dark:hover:text-white"
+          >
+            <ArrowLeft
+              size={15}
+              strokeWidth={1.5}
+              className="transition-transform duration-200 group-hover:-translate-x-1"
+            />
+
+            Back to selected work
+          </Link>
+        </section>
         {/* =====================================================
             HERO
         ====================================================== */}
-        <section className="border-b border-black/[0.08] px-6 pb-20 pt-24 dark:border-white/[0.08] sm:px-10 sm:pb-28 sm:pt-32 lg:px-16">
+        <section className="border-b border-black/[0.08] px-6 pb-20 pt-2 dark:border-white/[0.08] sm:px-10 sm:pb-28 sm:pt-2 lg:px-16">
         
           <div className="flex items-center justify-between">
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">

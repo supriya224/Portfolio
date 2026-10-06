@@ -5,10 +5,12 @@ import {
   CheckCircle2,
   Clock3,
   Flame,
+  ArrowLeft,
   MapPin,
   ShieldAlert,
   WifiOff
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /* =========================================================
    DATA
@@ -253,6 +255,23 @@ export default function Fire() {
     <div className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-neutral-100">
       {/* Page rails */}
       <div className="mx-auto min-h-screen w-full max-w-[1200px] border-x border-black/[0.06] dark:border-white/[0.07]">
+
+
+              <section className=" pb-2 pt-8 sm:px-10 sm:pb-12 sm:pt-10  ">
+                <Link
+                  to="/selected-work"
+                  className="group inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-950 dark:hover:text-white"
+                >
+                  <ArrowLeft
+                    size={15}
+                    strokeWidth={1.5}
+                    className="transition-transform duration-200 group-hover:-translate-x-1"
+                  />
+      
+                  Back to selected work
+                </Link>
+              </section>
+      
         {/* =================================================
             HERO
         ================================================= */}

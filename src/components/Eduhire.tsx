@@ -5,6 +5,7 @@ import {
   Bot,
   Check,
   ChevronRight,
+  ArrowLeft,
   Clock3,
   Layers3,
   Search,
@@ -120,12 +121,29 @@ export default function EduHire() {
           PAGE CONTAINER / RAILS
       =================================================== */}
 
-      <div className="mx-auto w-full max-w-[1180px] border-x border-black/[0.07] dark:border-white/[0.07]">
+      <div className="mx-auto w-full max-w-[1200px] border-x border-black/[0.07] dark:border-white/[0.07]">
+
+
+        <section className=" pb-2 pt-8 sm:px-10 sm:pb-12 sm:pt-10  ">
+          <Link
+            to="/selected-work"
+            className="group inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-950 dark:hover:text-white"
+          >
+            <ArrowLeft
+              size={15}
+              strokeWidth={1.5}
+              className="transition-transform duration-200 group-hover:-translate-x-1"
+            />
+
+            Back to selected work
+          </Link>
+        </section>
         {/* =================================================
             HERO
         ================================================= */}
 
-        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-32 sm:pt-24 lg:px-14">
+
+        <section className="px-5 pb-24 pt-16 sm:px-8 sm:pb-20 sm:pt-2 lg:px-14 ">
         
 
           <Reveal>

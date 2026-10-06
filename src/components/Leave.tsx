@@ -68,13 +68,13 @@ function Step({
 function Leave() {
   return (
     <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
-      <div className="mx-auto min-h-screen w-full max-w-[1180px] border-x border-black/[0.07] dark:border-white/[0.07]">
+      <div className="mx-auto min-h-screen w-full max-w-[1200px] border-x border-black/[0.07] dark:border-white/[0.07]">
 
         {/* =====================================================
             TOP
         ====================================================== */}
 
-        <section className="px-6 pb-20 pt-8 sm:px-10 sm:pb-28 sm:pt-10 lg:px-14">
+        <section className="px-6 pb-2 pt-8 sm:px-10 sm:pb-12 sm:pt-10 lg:px-14">
           <Link
             to="/selected-work"
             className="group inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-950 dark:hover:text-white"
@@ -93,7 +93,7 @@ function Leave() {
             HERO
         ====================================================== */}
 
-        <section className="px-6 pb-24 sm:px-10 sm:pb-32 lg:px-14">
+        <section className="px-6 pb-2 sm:px-10 sm:pb-20 lg:px-14">
           <div className="max-w-4xl">
 
             <div className="mb-8 flex items-center gap-3">
