@@ -1084,7 +1084,7 @@ export default function EduHire() {
 
         <section className="border-t border-black/[0.08] px-5 py-16 dark:border-white/[0.08] sm:px-8 sm:py-20 lg:px-14">
           <Reveal>
-            <a href="/work" className="group flex items-center justify-between">
+            <a href="/selected-work" className="group flex items-center justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-400">
                   Back to

@@ -11,6 +11,24 @@ const selectedProjects = [
     image: "/Fire.png",
     link: "/fire",
   },
+   {
+    number: "05",
+    title: "Leave & WFH Management",
+    description:
+      "An AI-powered fintech experience helping users understand spending, saving and financial decisions.",
+    category: "AI · Fintech",
+    image: "/Leave1.png",
+    link: "/leave",
+  },
+    {
+    number: "04",
+    title: "EduHire",
+    description:
+      "Designing a smarter hiring experience for discovering and evaluating candidates.",
+    category: "AI · Product Design",
+    image: "/Edu.png",
+    link: "/eduhire",
+  },
   {
     number: "02",
     title: "Paymi",
@@ -29,15 +47,7 @@ const selectedProjects = [
     image: "/Food.png",
     link: "/food",
   },
-  {
-    number: "04",
-    title: "EduHire",
-    description:
-      "Designing a smarter hiring experience for discovering and evaluating candidates.",
-    category: "AI · Product Design",
-    image: "/Edu.png",
-    link: "/eduhire",
-  },
+
 ];
 
 export default function SelectedWork() {

@@ -9,6 +9,7 @@ import Finora from "./components/Finora";
 import SelectedWork from "./pages/Selected.Page";
 import FoodSafety from "./components/Food";
 import AboutPage from "./pages/About.page";
+import Leave from "./components/Leave";
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/finora" element={<Finora />} />
         <Route path="/food" element={<FoodSafety />} />
         <Route path="/about" element={<AboutPage />} />
+          <Route path="/leave" element={<Leave />} />
   
       </Routes>
     </>
