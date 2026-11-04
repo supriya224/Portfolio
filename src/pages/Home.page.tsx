@@ -4,41 +4,61 @@ import { Link } from "react-router-dom";
 const selectedWork = [
   {
     number: "01",
-    title: "Fire & Smoke Detection",
-    category: "Enterprise · Dashboard",
+    title: "Volvo Partner Connect 2.0",
+    category: "UX/UI DESIGN · PRODUCT DESIGN · DATA VISUALIZATION",
     description:
-      "Designed an industrial monitoring experience around location, severity and actionable incident context."
+      "Designing connected enterprise dashboards and analytics experiences to simplify dealer operations, track performance and support data-driven decisions.",
+    link: "/volvo"
   },
   {
     number: "02",
-    title: "AI Fintech",
-    category: "Product · Mobile",
+    title: "3D Car Design & X-Ray Experience",
+    category: "INTERACTIVE 3D · PRODUCT DESIGN",
     description:
-      "Exploring how AI can help people understand spending, manage savings and make better financial decisions."
+      "Designed an interactive 3D vehicle exploration platform, solving real-time 3D model rendering bottlenecks and engineering seamless assembled and X-ray component diagnostics.",
+    link: "/car-3d"
   },
   {
     number: "03",
-    title: "Food Safety Dashboard",
-    category: "Enterprise · Dashboard",
+    title: "Advitiix Management Platform",
+    category: "FOUNDING PRODUCT · DESIGN & CODE",
     description:
-      "Simplified complex food-safety operations into a clearer monitoring and decision-making experience."
+      "Sole designer and developer founding the platform from scratch—crafting the end-to-end UX/UI, UX writing, and frontend code for Admin, PM, and User portals.",
+    link: "/advitiix"
   },
   {
     number: "04",
-    title: "EduHire",
-    category: "Product · Case Study",
+    title: "Model Pipeline & AI Dashboards",
+    category: "ENTERPRISE · DATA VISUALIZATION",
     description:
-      "Designed a more intuitive hiring experience focused on connecting candidates, recruiters and opportunities."
+      "Real-time ML model pipeline monitoring dashboards, data visualizations, and automated product newsletters built for data-driven operational visibility.",
+    link: "/model-pipeline"
+  },
+  {
+    number: "05",
+    title: "Fire & Smoke Detection",
+    category: "ENTERPRISE · DASHBOARD",
+    description:
+      "Designed an industrial monitoring experience around location, severity and actionable incident context.",
+    link: "/fire"
+  },
+  {
+    number: "06",
+    title: "AI Fintech",
+    category: "PRODUCT · MOBILE",
+    description:
+      "Exploring how AI can help people understand spending, manage savings and make better financial decisions.",
+    link: "/finora"
   }
 ];
 
 const experiences = [
   {
     company: "Advitiix Technovate",
-    role: "UX/UI & Product Designer",
+    role: "Sole Product Designer & Developer",
     period: "Oct 2025 — Present",
     Description:
-      " Working as a solo designer across multiple client projects, designing dashboards and web applications from early concepts to final implementation. I handle UX flows, UI design, design systems, and collaborate directly with clients and developers to turn complex requirements into clear, usable products."
+      "Working as the sole designer founding products from scratch, leading end-to-end UX/UI, UX writing, and frontend development. Built the complete Advitiix management application from the ground up (Admin, PM, and User portals), engineered an interactive 3D car design & X-ray inspection experience solving real-time 3D rendering constraints, built model pipeline dashboards, newsletters, and played a major role in designing Volvo Partner Connect 2.0 connected enterprise dashboards."
   },
   {
     company: "Central Data Storage",
@@ -60,16 +80,18 @@ function WorkPreview({
   number,
   title,
   category,
-  description
+  description,
+  link = "/selected-work"
 }: {
   number: string;
   title: string;
   category: string;
   description: string;
+  link?: string;
 }) {
   return (
     <Link
-      to="/selected-work"
+      to={link}
       className="group block border-t border-black/[0.09] py-7 transition-colors dark:border-white/[0.09]">
       <div className="grid grid-cols-[48px_1fr_auto] gap-5 sm:grid-cols-[70px_1fr_auto] sm:gap-8">
         <span className="pt-1 text-xs text-neutral-400">{number}</span>
@@ -188,7 +210,9 @@ export default function HomePage() {
                 Currently
               </p>
 
-              <p className="mt-4 text-lg">Product designer at Advitiix</p>
+              <p className="mt-4 text-lg">
+                Sole product designer & developer at Advitiix
+              </p>
             </div>
           </div>
         </section>
@@ -224,6 +248,7 @@ export default function HomePage() {
                 title={project.title}
                 category={project.category}
                 description={project.description}
+                link={project.link}
               />
             ))}
           </div>

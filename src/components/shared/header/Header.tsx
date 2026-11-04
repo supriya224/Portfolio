@@ -53,11 +53,10 @@ export default function Header() {
             {/* Home */}
             <Link
               to="/"
-              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${
-                isHomeActive
+              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${isHomeActive
                   ? "font-medium text-neutral-900 dark:text-white"
                   : "text-neutral-500 hover:text-neutral-950 dark:text-neutral-500 dark:hover:text-white"
-              }`}
+                }`}
             >
               <HomeIcon
                 aria-hidden="true"
@@ -76,11 +75,10 @@ export default function Header() {
             {/* Work */}
             <Link
               to="/work"
-              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${
-                isWorkActive
+              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${isWorkActive
                   ? "font-medium text-neutral-950 dark:text-white"
                   : "text-neutral-400 hover:text-neutral-950 dark:text-neutral-500 dark:hover:text-white"
-              }`}
+                }`}
             >
               <BriefcaseBusiness
                 aria-hidden="true"
@@ -99,11 +97,10 @@ export default function Header() {
             {/* Selected Work */}
             <Link
               to="/selected-work"
-              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${
-                isSelectedWorkActive
+              className={`group relative flex items-center gap-2 text-sm transition-colors duration-200 sm:text-[16px] ${isSelectedWorkActive
                   ? "font-medium text-neutral-950 dark:text-white"
                   : "text-neutral-400 hover:text-neutral-950 dark:text-neutral-500 dark:hover:text-white"
-              }`}
+                }`}
             >
               <Star
                 aria-hidden="true"
@@ -132,7 +129,7 @@ export default function Header() {
 
             {/* Resume */}
             <a
-              href="https://drive.google.com/file/d/1cBwhw5THtlLPja5_uvPJP6Hvhx0leL4G/view?usp=sharing"
+              href="https://drive.google.com/file/d/1NUZyCR1y4WqBA25RMbUZXfOT6MMC8GjE/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View resume"
