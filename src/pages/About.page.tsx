@@ -1,526 +1,400 @@
 import {
   ArrowUpRight,
   BrainCircuit,
+  Briefcase,
+  CheckCircle2,
   Code2,
-  //   Figma,
   Layers3,
   Lightbulb,
   MapPin,
-  Palette,
-  Puzzle
+  Palette
 } from "lucide-react";
+
+const BANGALORE_INDIA = "Bangalore, India";
+const getSectionTag = (label: string) => `// ${label}`;
 
 const designAreas = [
   {
     number: "01",
-    title: "Product",
+    title: "Enterprise SaaS & B2B Dashboards",
     icon: Layers3,
     description:
-      "Designing SaaS and enterprise products around real workflows, information, and decisions.",
-    skills: ["SaaS", "Enterprise", "Dashboards", "Design Systems"]
+      "Turning messy spreadsheets and complicated business requirements into clean dashboards, clear data tables, and multi-role permission flows.",
+    skills: ["Data Tables & Filters", "Role Permissions", "Audit Workflows", "KPI Metrics"]
   },
   {
     number: "02",
-    title: "UX / UI",
-    icon: Puzzle,
+    title: "AI Product & Systems UX",
+    icon: BrainCircuit,
     description:
-      "Creating clear digital experiences from user flows and structure to polished interfaces.",
-    skills: ["Landing Pages", "Web Apps", "Mobile Apps", "Prototyping"]
+      "Designing trustworthy interfaces for AI tools: showing confidence ratings, minimizing false alarm fatigue, and keeping human users in control.",
+    skills: ["Confidence Cues", "False-Alarm Triage", "Human Controls", "Status Feeds"]
   },
   {
     number: "03",
-    title: "Visual",
+    title: "Design Systems & Component Libraries",
     icon: Palette,
     description:
-      "Creating visual communication that feels consistent, intentional, and easy to understand.",
-    skills: ["Social Posts", "Posters", "Thumbnails", "Packaging"]
+      "Building modular Figma component libraries with auto-layout and clear variables that map 1:1 to React and Tailwind tokens.",
+    skills: ["Figma Auto-Layout", "Design Tokens", "Accessibility (WCAG)", "Reusable Components"]
   },
   {
     number: "04",
-    title: "Problem Solving",
+    title: "User Research & Product Strategy",
     icon: Lightbulb,
     description:
-      "Starting with the problem instead of the screen and finding simpler ways to solve it.",
+      "Sitting directly with product managers and stakeholders to map user journeys, test wireframes, and validate real-world usability.",
     skills: [
-      "Research",
-      "User Flows",
+      "User Workflows",
       "Information Architecture",
-      "UX Strategy"
+      "Figma Wireframing",
+      "Developer Handoff"
     ]
   }
 ];
 
-const developmentSkills = [
-  "React",
+const technicalSkills = [
+  "React.js",
   "Next.js",
-  "JavaScript",
   "TypeScript",
-  "HTML",
-  "CSS",
-  "Tailwind",
-  "AWS",
+  "JavaScript",
+  "HTML5 & CSS3",
+  "Tailwind CSS",
   "MongoDB",
-  "shadcn/ui",
-  "Material UI"
+  "AWS S3",
+  "Figma & FigJam",
+  "REST APIs",
+  "Git & GitHub"
 ];
 
-const aiSkills = {
-  explore: ["ChatGPT", "Claude", "Gemini", "Perplexity"],
-  prototype: ["Figma Make", "Stitch", "v0", "Lovable", "Antigravity"],
-  create: ["Figma", "Framer Motion", "Rive", "FigJam", "Miro"]
-};
-
-function DesignAreaCard({
-  number,
-  title,
-  icon: Icon,
-  description,
-  skills
-}: {
-  number: string;
-  title: string;
-  icon: typeof Layers3;
-  description: string;
-  skills: string[];
-}) {
-  return (
-    <article className="group border-t border-black/[0.08] py-8 dark:border-white/[0.08]">
-      <div className="flex items-start justify-between gap-6">
-        <span className="text-xs tracking-[0.16em] text-neutral-400">
-          {number}
-        </span>
-
-        <Icon
-          className="h-5 w-5 text-neutral-300 transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3 dark:text-neutral-600"
-          strokeWidth={1.5}
-        />
-      </div>
-
-      <h3 className="mt-8 font-serif text-3xl tracking-[-0.04em]">{title}</h3>
-
-      <p className="mt-4 max-w-sm text-[15px] leading-7 text-neutral-500 dark:text-neutral-400">
-        {description}
-      </p>
-
-      <div className="mt-7 flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            className="rounded-full border border-black/[0.08] px-3 py-1.5 text-xs text-neutral-500 transition-colors duration-200 group-hover:border-black/[0.15] group-hover:text-neutral-950 dark:border-white/[0.1] dark:text-neutral-400 dark:group-hover:border-white/[0.2] dark:group-hover:text-white">
-            {skill}
-          </span>
-        ))}
-      </div>
-    </article>
-  );
-}
+const careerTimeline = [
+  {
+    period: "OCT 2025 — PRESENT",
+    role: "UX/UI & Product Designer",
+    company: "Advitiix Technovate",
+    location: BANGALORE_INDIA,
+    description:
+      "Sole product designer leading the UI/UX for enterprise client applications. Designed connected dashboards for Volvo Partner Connect 2.0 (PDP, scorecards, dealer investments), spatial 2D floor maps for the Fire Detection live app, and internal platforms. Built reusable design libraries in Figma and handled developer handoffs.",
+    highlights: [
+      "Sole designer for Volvo Partner Connect 2.0 dealer analytics",
+      "Researched and built 2D spatial floor maps for live fire detection",
+      "Maintained Figma component libraries with auto-layout and direct token mapping"
+    ]
+  },
+  {
+    period: "APR 2025 — SEP 2025",
+    role: "UX/UI & Graphic Designer",
+    company: "Central Data Storage",
+    location: BANGALORE_INDIA,
+    description:
+      "Designed clean interfaces for cloud storage and backup software. Simplified file organization, storage quota views, and user settings across desktop and mobile screens.",
+    highlights: [
+      "Redesigned storage management flows and folder structures",
+      "Created design system guidelines and marketing assets",
+      "Worked with frontend engineers to ensure accurate layout delivery"
+    ]
+  },
+  {
+    period: "SEP 2024 — MAR 2025",
+    role: "Full Stack Developer",
+    company: "Touch Cloud Computing Technologies",
+    location: BANGALORE_INDIA,
+    description:
+      "Worked as a frontend and full-stack developer using React, Next.js, TypeScript, MongoDB, and AWS S3. This engineering foundation helps me design realistic components that don't break during implementation.",
+    highlights: [
+      "Built production React components and API integrations",
+      "Managed AWS S3 asset uploads and MongoDB data structures",
+      "Learned firsthand how frontend constraints and states work in real production"
+    ]
+  }
+];
 
 function SkillPill({ children }: { children: string }) {
   return (
-    <span className="rounded-full border border-black/[0.08] px-3 py-3 text-xs text-neutral-500 dark:border-white/[0.1] dark:text-neutral-400">
+    <span className="rounded-full border border-black/[0.08] dark:border-white/[0.1] px-3.5 py-1.5 text-xs text-neutral-600 dark:text-neutral-300 font-mono">
       {children}
     </span>
   );
 }
 
-function AiGroup({
-  title,
-  description,
-  skills
-}: {
-  title: string;
-  description: string;
-  skills: string[];
-}) {
-  return (
-    <div className="border-t border-black/[0.08] py-7 dark:border-white/[0.08] ">
-      <div className="grid gap-4 sm:grid-cols-[150px_1fr]">
-        <div>
-          <h3 className="text-sm font-medium ">{title}</h3>
-
-          <p className="mt-1 text-xs text-neutral-400">{description}</p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <SkillPill key={skill}>{skill}</SkillPill>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function AboutPage() {
+  const resumeUrl =
+    "https://drive.google.com/file/d/1NUZyCR1y4WqBA25RMbUZXfOT6MMC8GjE/view?usp=sharing";
+
   return (
-    <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
-      <div className="mx-auto min-h-screen w-full max-w-[1200px] border-x border-black/[0.08] dark:border-white/[0.08]">
+    <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-[#f2f2f2] font-sans pb-24">
+      <div className="mx-auto min-h-screen w-full max-w-[1240px] border-x border-black/[0.08] dark:border-white/[0.08]">
         {/* =====================================================
             HERO
         ====================================================== */}
-
-        <section className="px-6 pb-24 pt-24 sm:px-10 sm:pt-24 lg:px-16 lg:pb-32">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-            {/* Left — Content */}
+        <section className="px-6 pb-12 pt-12 sm:px-12 sm:pt-16 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+            {/* Left Content */}
             <div className="max-w-3xl">
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-neutral-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                About
+              <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                <span>ABOUT &amp; BACKGROUND</span>
               </div>
-              <h1 className="mt-8 font-serif text-5xl leading-[0.94] tracking-[-0.055em] sm:text-7xl lg:text-[60px]">
-                I turn complex problems
-  
-                into clear products -  and design with code in mind.
+
+              <h1 className="mt-4 font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-neutral-950 dark:text-white leading-[1.05]">
+                I design complex products into clear, intuitive experiences.
               </h1>
-      
-              <p className="mt-8 max-w-2xl text-xl leading-8 text-neutral-500 dark:text-neutral-400 sm:text-2xl sm:leading-9">
-                I design digital products that make complex problems easier to
-                understand, use, and solve.
+
+              <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+                Hi, I&apos;m Supriya Maurya — a Product Designer based in Bangalore with a background in frontend development. I specialize in enterprise SaaS dashboards, AI products, and B2B platforms.
               </p>
-              <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4 text-sm text-neutral-400">
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" strokeWidth={1.5} />
-                  Product Designer
-                </div>
 
-                <div className="flex items-center gap-2">
-                  <Layers3 className="h-4 w-4" strokeWidth={1.5} />
-                  UX / UI
-                </div>
+              <p className="mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                Having worked as a developer before transitioning into product design, I bridge user empathy with practical technical understanding. I understand how components are built in React and Tailwind, ensuring that Figma designs hand off cleanly to engineering without endless rework.
+              </p>
 
-                <div className="flex items-center gap-2">
-                  <Code2 className="h-4 w-4" strokeWidth={1.5} />
-                  Design + Development
+              {/* Meta pills */}
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.5} />
+                  <span>{BANGALORE_INDIA}</span>
                 </div>
+                <div className="flex items-center gap-1.5">
+                  <Briefcase className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.5} />
+                  <span>Product Designer at Advitiix</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Code2 className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.5} />
+                  <span>React · Next.js · TypeScript</span>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:supriyam224@gmail.com"
+                  className="inline-flex items-center gap-2 rounded-xl bg-neutral-950 px-5 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200">
+                  <span>Start a Conversation</span>
+                  <ArrowUpRight size={14} />
+                </a>
+
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-black/15 bg-transparent px-5 py-3 font-mono text-xs uppercase tracking-wider text-neutral-700 transition-colors hover:border-black hover:text-black dark:border-white/15 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white">
+                  <span>Download Resume</span>
+                  <ArrowUpRight size={14} />
+                </a>
               </div>
             </div>
 
-            {/* Right — Image */}
+            {/* Right Image */}
             <div className="flex justify-start lg:justify-end">
-              <div className="group relative w-full max-w-[360px] overflow-hidden rounded-2xl border border-black/[0.08] bg-neutral-100 dark:border-white/[0.08] dark:bg-neutral-900">
+              <div className="group relative w-full max-w-[320px] overflow-hidden rounded-2xl border border-black/[0.08] bg-neutral-100 dark:border-white/[0.08] dark:bg-neutral-900 shadow-lg">
                 <img
                   src="/about.jpeg"
-                  alt="Portrait"
-                  className="
-            aspect-[4/5]
-            h-full
-            w-full
-            object-cover
-            transition-transform
-            duration-700
-            ease-out
-            group-hover:scale-[1.025]
-          "
+                  alt="Supriya Maurya - Product Designer"
+                  className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 />
-
-                {/* subtle gradient */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <div className="font-mono text-xs text-white">
+                    <span className="font-semibold block">Supriya Maurya</span>
+                    <span className="text-white/80 text-[11px]">{BANGALORE_INDIA}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* =====================================================
-            INTRO
+            DESIGN AREAS & CRAFT
         ====================================================== */}
+        <section className="px-6 py-12 sm:px-12 sm:py-16 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("SPECIALIZATIONS")}
+          </div>
 
-        <section className="border-y border-black/[0.08] dark:border-white/[0.08]">
-          <div className="grid md:grid-cols-[0.7fr_1.3fr]">
-            <div className="border-b border-black/[0.08] px-6 py-10 dark:border-white/[0.08] md:border-b-0 md:border-r sm:px-10 lg:px-16 lg:py-14">
-              <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-                I design. I build. I solve.
+          <h2 className="mt-3 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Core Design Competencies
+          </h2>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {designAreas.map((area) => {
+              const Icon = area.icon;
+              return (
+                <article
+                  key={area.number}
+                  className="group relative rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-white/[0.4] dark:bg-white/[0.02] p-8 transition-all duration-300 hover:border-black/20 dark:hover:border-white/20">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-neutral-400">{area.number}</span>
+                    <Icon className="h-5 w-5 text-neutral-400 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                  </div>
+
+                  <h3 className="mt-6 font-serif text-2xl font-normal tracking-tight text-neutral-950 dark:text-white">
+                    {area.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {area.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {area.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-md border border-black/[0.06] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] px-2.5 py-1 font-mono text-[11px] text-neutral-600 dark:text-neutral-400">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* =====================================================
+            TECHNICAL FOUNDATION & CODE
+        ====================================================== */}
+        <section className="px-6 py-12 sm:px-12 sm:py-16 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+                {getSectionTag("DESIGN + CODE HYBRID")}
+              </div>
+              <h2 className="mt-3 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white leading-[1.1]">
+                I design products I know how to build.
+              </h2>
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                Having worked as a frontend developer writing React and TypeScript before focusing on product design, I think in components, data states, and real-world edge cases.
+              </p>
+              <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                This means zero confusion when handing off to engineers: my Figma designs have clean auto-layout, realistic token names, and specs for error and loading states.
               </p>
             </div>
 
-            <div className="px-6 py-12 sm:px-10 lg:px-16 lg:py-16">
-              <div className="max-w-2xl space-y-6 text-[17px] leading-8 text-neutral-500 dark:text-neutral-400">
-                <p>
-                  I&apos;m a product designer with a developer background,
-                  working across digital products, enterprise experiences, and
-                  visual design.
-                </p>
+            <div className="lg:col-span-7 rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-white/[0.4] dark:bg-white/[0.02] p-6 sm:p-7">
+              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-3">
+                ENGINEERING TOOLS &amp; SKILLS
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {technicalSkills.map((tech) => (
+                  <SkillPill key={tech}>{tech}</SkillPill>
+                ))}
+              </div>
 
-                <p>
-                  I&apos;ve worked across 5+ client projects, designing SaaS
-                  products, enterprise dashboards, mobile experiences, websites,
-                  and visual communication.
-                </p>
-
-                <p>
-                  I enjoy taking something complicated, breaking it down,
-                  finding what matters, and turning it into a clear experience.
-                </p>
-
-                <p className="text-neutral-950 dark:text-white">
-                  I don&apos;t just ask how a screen should look. I ask what
-                  problem we&apos;re actually trying to solve.
-                </p>
+              <div className="mt-6 pt-5 border-t border-black/[0.06] dark:border-white/[0.06] space-y-2.5">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+                    <strong>Component Parity:</strong> Figma components match React prop interfaces 1:1.
+                  </span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+                    <strong>Realistic States:</strong> Always designing for empty data, long text wraps, error states, and slow network loads.
+                  </span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+                    <strong>Accessibility:</strong> High color contrast (WCAG AA) and keyboard-navigable focus states.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* =====================================================
-            WHAT I WORK ON
+            CAREER TIMELINE
         ====================================================== */}
-
-        <section className="px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
-          <div className="mb-16 max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-              What I work on
-            </p>
-
-            <h2 className="mt-5 font-serif text-5xl tracking-[-0.05em] sm:text-6xl">
-              From problems to products.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-neutral-500 dark:text-neutral-400">
-              I work across product, UX/UI, visual design, and problem solving
-              depending on what the product needs.
-            </p>
+        <section className="px-6 py-12 sm:px-12 sm:py-16 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("EXPERIENCE")}
           </div>
 
-          <div className="grid gap-x-10 md:grid-cols-2">
-            {designAreas.map((area) => (
-              <DesignAreaCard
-                key={area.number}
-                number={area.number}
-                title={area.title}
-                icon={area.icon}
-                description={area.description}
-                skills={area.skills}
-              />
+          <h2 className="mt-3 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Professional Experience
+          </h2>
+
+          <div className="mt-8 space-y-6">
+            {careerTimeline.map((item) => (
+              <div
+                key={`${item.company}-${item.period}`}
+                className="relative grid gap-6 border-l-2 border-neutral-300 dark:border-neutral-700 pl-6 sm:grid-cols-12 sm:pl-8 sm:gap-8">
+                {/* Timeline dot */}
+                <span className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-neutral-900 dark:bg-white" />
+
+                <div className="sm:col-span-4">
+                  <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+                    {item.period}
+                  </span>
+                  <h3 className="mt-1 font-serif text-2xl font-normal text-neutral-950 dark:text-white">
+                    {item.company}
+                  </h3>
+                  <p className="font-mono text-xs text-neutral-800 dark:text-neutral-200 mt-1 font-medium">
+                    {item.role}
+                  </p>
+                  <p className="font-mono text-[11px] text-neutral-400 mt-0.5">{item.location}</p>
+                </div>
+
+                <div className="sm:col-span-8">
+                  <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {item.description}
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {item.highlights.map((highlight) => (
+                      <li
+                        key={highlight}
+                        className="flex items-start gap-2.5 text-xs text-neutral-700 dark:text-neutral-300 font-mono">
+                        <span className="h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0 mt-1.5" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
         {/* =====================================================
-            DESIGN + DEVELOPMENT
+            SOCIAL & CONTACT STRIP
         ====================================================== */}
-
-        <section className="border-y border-black/[0.08] dark:border-white/[0.08]">
-          <div className="grid md:grid-cols-[0.7fr_1.3fr]">
-            <div className="border-b border-black/[0.08] px-6 py-12 dark:border-white/[0.08] md:border-b-0 md:border-r sm:px-10 lg:px-16 lg:py-16">
-              <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-                Design + development
-              </p>
-
-              <h2 className="mt-5 max-w-sm font-serif text-4xl tracking-[-0.045em] sm:text-5xl">
-                I design things I understand how to build.
-              </h2>
-            </div>
-
-            <div className="px-6 py-12 sm:px-10 lg:px-16 lg:py-16">
-              <div className="flex items-start gap-4">
-                <Code2
-                  className="mt-1 h-5 w-5 shrink-0 text-neutral-400"
-                  strokeWidth={1.5}
-                />
-
-                <div className="max-w-2xl">
-                  <p className="text-lg leading-8 text-neutral-500 dark:text-neutral-400">
-                    Before focusing on product design, I worked as a developer.
-                    That experience changed the way I approach design.
-                  </p>
-
-                  <p className="mt-5 text-lg leading-8 text-neutral-500 dark:text-neutral-400">
-                    I understand components, responsive behavior, APIs,
-                    technical constraints, and how a design moves from Figma to
-                    code and eventually into production.
-                  </p>
-
-                  <p className="mt-5 text-lg leading-8 text-neutral-950 dark:text-white">
-                    It also means I can communicate with developers easily and
-                    design with implementation in mind.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-12 flex flex-wrap gap-2">
-                {developmentSkills.map((skill) => (
-                  <SkillPill key={skill}>{skill}</SkillPill>
-                ))}
-              </div>
-            </div>
+        <section className="px-6 py-12 sm:px-12 lg:px-16 flex flex-wrap items-center justify-between gap-6 font-mono text-xs">
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
+              Available for Product Design Roles
+            </span>
           </div>
-        </section>
 
-        {/* =====================================================
-            AI
-        ====================================================== */}
-
-        <section className="px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
-          <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
-            <div>
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-neutral-400">
-                <BrainCircuit className="h-4 w-4" strokeWidth={1.5} />
-                AI workflow
-              </div>
-
-              <h2 className="mt-6 font-serif text-5xl leading-[1] tracking-[-0.05em] sm:text-6xl">
-                Designing with AI,
-                <br />
-                not around it.
-              </h2>
-            </div>
-
-            <div>
-              <p className="mb-8 max-w-2xl text-lg leading-8 text-neutral-500 dark:text-neutral-400">
-                AI has become part of how I explore, prototype, research, and
-                build. I&apos;m interested in using these tools to move faster
-                without losing the thinking behind the design.
-              </p>
-
-              <AiGroup
-                title="Explore"
-                description="Research & ideas"
-                skills={aiSkills.explore}
-              />
-
-              <AiGroup
-                title="Prototype"
-                description="Test & build"
-                skills={aiSkills.prototype}
-              />
-
-              <AiGroup
-                title="Create"
-                description="Design & motion"
-                skills={aiSkills.create}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================
-            EDUCATION
-        ====================================================== */}
-
-        <section className="border-y border-black/[0.08] dark:border-white/[0.08]">
-          <div className="grid md:grid-cols-[0.7fr_1.3fr]">
-            <div className="border-b border-black/[0.08] px-6 py-10 dark:border-white/[0.08] md:border-b-0 md:border-r sm:px-10 lg:px-16 lg:py-14">
-              <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-                Education
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2">
-              <div className="border-b border-black/[0.08] px-6 py-10 dark:border-white/[0.08] sm:border-b-0 sm:border-r sm:px-10 lg:px-16 lg:py-14">
-                <p className="text-xs text-neutral-400">2020 — 2023</p>
-
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.03em]">
-                  B.Tech
-                </h3>
-              </div>
-
-              <div className="px-6 py-10 sm:px-10 lg:px-16 lg:py-14">
-                <p className="text-xs text-neutral-400">2018 — 2020</p>
-
-                <h3 className="mt-4 font-serif text-3xl tracking-[-0.03em]">
-                  Diploma
-                </h3>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================
-            CLOSING
-        ====================================================== */}
-
-        <section className="px-6 py-28 sm:px-10 lg:px-16 lg:py-36">
-          <div className="max-w-4xl">
-            <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-              What&apos;s next
-            </p>
-
-            <h2 className="mt-7 font-serif text-5xl leading-[0.95] tracking-[-0.055em] sm:text-7xl">
-              Curious about
-              <br />
-              problems worth solving.
-            </h2>
-
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-500 dark:text-neutral-400 sm:text-xl">
-              I&apos;m always learning, experimenting with new tools, and
-              building things that help me understand how products work.
-            </p>
-
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
             <a
               href="mailto:supriyam224@gmail.com"
-              className="group mt-10 inline-flex items-center gap-3 border-b border-neutral-950 pb-2 text-sm transition-colors hover:text-neutral-500 dark:border-white dark:hover:text-neutral-400">
-              Let&apos;s talk
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                strokeWidth={1.5}
-              />
+              className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">
+              Email ↗
             </a>
-          </div>
-        </section>
-
-        {/* Social Links */}
-        <section className="border-y border-black/[0.08] dark:border-white/[0.08]">
-          <div className="flex flex-wrap items-center justify-between gap-6 px-6 py-7 sm:px-10 lg:px-16">
-            <p className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-              Find me online
-            </p>
-
-            <div className="flex flex-wrap items-center gap-6 sm:gap-8">
-              {/* Dribbble */}
-              <a
-                href="https://dribbble.com/YOUR_USERNAME"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white">
-                <span>Dribbble</span>
-
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  strokeWidth={1.5}
-                />
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/YOUR_USERNAME"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white">
-                <span>LinkedIn</span>
-
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  strokeWidth={1.5}
-                />
-              </a>
-
-              {/* Behance */}
-              <a
-                href="https://www.behance.net/YOUR_USERNAME"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white">
-                <span>Behance</span>
-
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  strokeWidth={1.5}
-                />
-              </a>
-
-              {/* GitHub */}
-              <a
-                href="https://github.com/YOUR_USERNAME"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white">
-                <span>GitHub</span>
-
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  strokeWidth={1.5}
-                />
-              </a>
-            </div>
+            <a
+              href="https://www.behance.net/supriyamaurya5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">
+              Behance ↗
+            </a>
+            <a
+              href="https://www.instagram.com/supri_241d/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">
+              Instagram ↗
+            </a>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors">
+              Resume ↗
+            </a>
           </div>
         </section>
       </div>

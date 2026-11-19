@@ -1,544 +1,394 @@
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ArrowUpRight,
+  Clock,
+  Database,
+  FileCheck,
+  FileText,
+  Layers,
+  Table
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Check,
-  CircleAlert,
-  FileText,
-  ArrowLeft,
-  Search,
-  ShieldCheck,
-  Users
-} from "lucide-react";
+const getSectionTag = (label: string) => `// ${label}`;
 
-type WireframeProps = {
-  title: string;
-  children?: React.ReactNode;
-};
+const compliancePersonas = [
+  {
+    role: "Global QA & Food Safety Director",
+    context: "Oversees 200+ ingredient suppliers across North America and Europe.",
+    need: "High-level risk heatmaps, supplier compliance rates, and automated audit status reporting."
+  },
+  {
+    role: "Facility Compliance Officer",
+    context: "Receives raw bulk shipments daily at local manufacturing plants.",
+    need: "Instant validation of supplier COAs (Certificates of Analysis) and rapid non-conformance logging."
+  },
+  {
+    role: "Third-Party Food Safety Auditor",
+    context: "Performs annual on-site inspections against GFSI, SQF, and HACCP standards.",
+    need: "Standardized audit item checklist, evidence upload vault, and non-compliance dispute logging."
+  }
+];
 
-function Wireframe({ title, children }: WireframeProps) {
-  return (
-    <div className="overflow-hidden rounded-2xl border border-black/[0.08] bg-white dark:border-white/[0.08] dark:bg-[#181818]">
-      <div className="flex h-11 items-center gap-2 border-b border-black/[0.07] px-4 dark:border-white/[0.07]">
-        <span className="h-2.5 w-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-        <span className="h-2.5 w-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-        <span className="h-2.5 w-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+const complianceWorkflows = [
+  {
+    step: "01",
+    title: "Supplier Onboarding & Risk Tiering",
+    detail: "Suppliers register certifications (GFSI, ISO 22000, Organic). System automatically assigns an initial risk score based on country of origin and ingredient allergen tier."
+  },
+  {
+    step: "02",
+    title: "Continuous Certificate Tracking",
+    detail: "Automated cron workers monitor expiration windows at 90, 60, and 30-day thresholds, notifying supplier portals before certifications expire."
+  },
+  {
+    step: "03",
+    title: "Audit Non-Conformance Logging",
+    detail: "During quarterly audits, discovered discrepancies are flagged with photographic evidence and linked directly to corrective action timelines."
+  },
+  {
+    step: "04",
+    title: "Unified Query & Dispute Resolution",
+    detail: "Suppliers and enterprise QA collaborate within a unified ticket thread, maintaining an immutable audit log for regulatory inspections."
+  }
+];
 
-        <span className="ml-3 text-[11px] text-neutral-400">{title}</span>
-      </div>
-
-      <div className="min-h-[360px] bg-[#f8f8f6] p-5 dark:bg-[#202020]">
-        {children}
-      </div>
-    </div>
-  );
-}
+const erpModules = [
+  {
+    title: "Supplier Compliance Radar",
+    description:
+      "A high-density table view with instant multi-facet filtering (by allergen risk, audit score, country of origin, and renewal urgency) replacing scattered spreadsheets.",
+    icon: Table
+  },
+  {
+    title: "Automated Certificate Countdown",
+    description:
+      "Visual timeline ribbons showing expiring GFSI and HACCP certificates with automated escalation rules that lock procurement orders when certificates lapse.",
+    icon: Clock
+  },
+  {
+    title: "Audit Non-Conformance Ticket Suite",
+    description:
+      "End-to-end query resolution interface linking conversation history, re-testing lab reports, and QA approval sign-offs in one immutable container.",
+    icon: FileCheck
+  },
+  {
+    title: "Global Facility Switcher",
+    description:
+      "Enterprise hierarchy controls enabling directors to toggle between macro enterprise view and specific manufacturing plant receiving docks.",
+    icon: Database
+  }
+];
 
 export default function FoodSafety() {
   return (
-    <main className="min-h-screen bg-[#f7f5f2] text-neutral-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
-      <div className="mx-auto max-w-[1200px] border-x border-black/[0.08] dark:border-white/[0.08]">
-
-
-        <section className=" pb-2 pt-8 sm:px-10 sm:pb-12 sm:pt-10  ">
+    <main className="min-h-screen bg-[#f7f5f2] text-neutral-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-[#f2f2f2] font-sans pb-32">
+      <div className="mx-auto w-full max-w-[1240px] border-x border-black/[0.08] dark:border-white/[0.08]">
+        {/* Navigation Breadcrumb */}
+        <section className="px-6 pt-10 pb-6 sm:px-12 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
           <Link
             to="/selected-work"
-            className="group inline-flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-neutral-950 dark:hover:text-white"
-          >
+            className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-neutral-500 hover:text-neutral-950 dark:hover:text-white transition-colors">
             <ArrowLeft
-              size={15}
-              strokeWidth={1.5}
+              size={14}
               className="transition-transform duration-200 group-hover:-translate-x-1"
             />
-
-            Back to selected work
+            <span>Back to Selected Work</span>
           </Link>
         </section>
+
         {/* =====================================================
-            HERO
+            1. PROJECT OVERVIEW & CONTEXT
         ====================================================== */}
-        <section className="border-b border-black/[0.08] px-6 pb-20 pt-2 dark:border-white/[0.08] sm:px-10 sm:pb-28 sm:pt-2 lg:px-16">
-        
-          <div className="flex items-center justify-between">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">
-              Case Study / 03 <br />
-              <h3 className="text-[12px] pt-3 font-medium uppercase  tracking-[0.14em] text-neutral-400">
-                ERP · SmartFoodSafe · Dashboard
-              </h3>
-            </p>
-            <div>
-            <Link
-              to="https://www.figma.com/design/QoRUE76kIbsfC1Cg25Hl1X/Food-safety-dashboard?node-id=0-1&p=f&t=cGhyBPxpueetd8b9-0"
-              className="text-[12px] text-neutral-400  border-b border-neutral-400 transition-colors duration-300 hover:text-neutral-950 hover:border-neutral-950 dark:hover:text-white dark:hover:border-white">
-              View: Food Safety Dashboard
-            </Link>
-            <br />
-            <span className="text-xs uppercase tracking-[0.16em] text-neutral-400">
-              UX/UI Case Study
-            </span>
+        <header className="px-6 pt-12 pb-16 sm:px-12 sm:pt-16 sm:pb-20 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
+            <div className="flex items-center gap-2.5">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <span>CASE STUDY 03 · ENTERPRISE DASHBOARD &amp; WORKFLOW DESIGN</span>
             </div>
-          </div>
-     
-
-          <div className="mt-24 max-w-5xl">
-            <h1 className="font-serif text-5xl leading-[0.95] tracking-[-0.045em] sm:text-7xl lg:text-[92px]">
-              Making supplier
-              <br />
-              compliance actionable.
-            </h1>
-
-            <p className="mt-9 max-w-2xl text-lg leading-8 text-neutral-500 dark:text-neutral-400 sm:text-xl">
-              Designing an enterprise workflow for QA and Food Safety teams to
-              monitor compliance, identify risks and resolve food-safety
-              queries.
-            </p>
+            <span className="text-[11px] text-neutral-400">PROFESSIONAL WORK · SMARTFOODSAFE ERP</span>
           </div>
 
-          <div className="mt-20 flex items-center gap-3 text-sm text-neutral-400">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/[0.1] dark:border-white/[0.1]">
-              <ArrowDown size={16} strokeWidth={1.5} />
-            </div>
+          <h1 className="mt-8 font-serif text-5xl sm:text-7xl lg:text-[84px] font-normal tracking-tight text-neutral-950 dark:text-white leading-[0.98]">
+            Food Safety Compliance Dashboard
+          </h1>
 
-            <span>Explore case study</span>
-          </div>
-        </section>
-
-        {/* =====================================================
-            PROJECT META
-        ====================================================== */}
-
-        <section className="grid grid-cols-2 border-b border-black/[0.08] dark:border-white/[0.08] sm:grid-cols-4">
-          <div className="border-r border-black/[0.08] p-6 dark:border-white/[0.08] sm:p-8">
-            <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">
-              Role
-            </p>
-            <p className="mt-3 text-sm">UX/UI Designer</p>
-          </div>
-
-          <div className="border-b border-black/[0.08] p-6 dark:border-white/[0.08] sm:border-b-0 sm:border-r sm:p-8">
-            <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">
-              Type
-            </p>
-            <p className="mt-3 text-sm">Product Design</p>
-          </div>
-
-          <div className="border-r border-black/[0.08] p-6 dark:border-white/[0.08] sm:p-8">
-            <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">
-              Platform
-            </p>
-            <p className="mt-3 text-sm">Desktop Web</p>
-          </div>
-
-          <div className="p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">
-              Tools
-            </p>
-            <p className="mt-3 text-sm">Figma · FigJam</p>
-          </div>
-        </section>
-
-        {/* =====================================================
-            PROBLEM
-        ====================================================== */}
-
-        <section className="grid gap-12 border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:grid-cols-[0.7fr_1.3fr] lg:px-16 lg:py-28">
-          <div>
-            <span className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-              01 — The Challenge
-            </span>
-          </div>
-
-          <div>
-            <h2 className="max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl">
-              Compliance information existed, but the workflow was difficult to
-              manage.
-            </h2>
-
-            <p className="mt-8 max-w-2xl text-base leading-7 text-neutral-500 dark:text-neutral-400">
-              QA and Food Safety teams need to monitor suppliers, identify
-              risks, track certificates and resolve food-safety queries without
-              losing context.
-            </p>
-
-            <div className="mt-12 grid gap-4 sm:grid-cols-2">
-              {[
-                ["Visibility", "Understand supplier compliance quickly."],
-                ["Prioritization", "Identify high-risk issues first."],
-                [
-                  "Query Management",
-                  "Track issues from creation to resolution."
-                ],
-                ["Collaboration", "Keep responses and documents connected."]
-              ].map(([title, text]) => (
-                <div
-                  key={title}
-                  className="rounded-xl border border-black/[0.08] p-5 dark:border-white/[0.08]">
-                  <h3 className="text-sm font-medium">{title}</h3>
-
-                  <p className="mt-2 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-                    {text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================
-            CORE INSIGHT
-        ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-24 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-32">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-            The Insight
+          <p className="mt-6 max-w-3xl text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-sans">
+            Designing an enterprise compliance system for QA and Food Safety directors—turning high-risk supply chain data, expiring certificates, and audit non-conformances into actionable workflows.
           </p>
 
-          <h2 className="mt-8 max-w-4xl font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-6xl">
-            The dashboard shouldn't just show problems. It should help people
-            resolve them.
-          </h2>
+          {/* Metadata Grid */}
+          <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4 border-t border-black/[0.08] dark:border-white/[0.08] pt-8 font-mono text-xs">
+            <div>
+              <span className="text-neutral-400 uppercase tracking-widest block mb-1">Role</span>
+              <span className="text-neutral-800 dark:text-neutral-200 font-medium">UX/UI &amp; Product Designer</span>
+            </div>
+            <div>
+              <span className="text-neutral-400 uppercase tracking-widest block mb-1">Domain</span>
+              <span className="text-neutral-800 dark:text-neutral-200 font-medium">Enterprise ERP &amp; Supply Chain</span>
+            </div>
+            <div>
+              <span className="text-neutral-400 uppercase tracking-widest block mb-1">Focus</span>
+              <span className="text-neutral-800 dark:text-neutral-200 font-medium">Data Density &amp; Audit Workflows</span>
+            </div>
+            <div>
+              <span className="text-neutral-400 uppercase tracking-widest block mb-1">Platform</span>
+              <span className="text-neutral-800 dark:text-neutral-200 font-medium">Desktop Web Application</span>
+            </div>
+          </div>
+        </header>
 
-          <div className="mt-12 flex flex-wrap items-center gap-3 text-sm text-neutral-500 dark:text-neutral-400">
-            <span className="rounded-full border border-black/[0.08] px-4 py-2 dark:border-white/[0.08]">
-              Monitor
-            </span>
-
-            <ArrowUpRight size={15} />
-
-            <span className="rounded-full border border-black/[0.08] px-4 py-2 dark:border-white/[0.08]">
-              Identify
-            </span>
-
-            <ArrowUpRight size={15} />
-
-            <span className="rounded-full border border-black/[0.08] px-4 py-2 dark:border-white/[0.08]">
-              Act
-            </span>
-
-            <ArrowUpRight size={15} />
-
-            <span className="rounded-full border border-black/[0.08] px-4 py-2 dark:border-white/[0.08]">
-              Collaborate
-            </span>
-
-            <ArrowUpRight size={15} />
-
-            <span className="rounded-full border border-black/[0.08] px-4 py-2 dark:border-white/[0.08]">
-              Resolve
-            </span>
+        {/* Hero Visual Preview */}
+        <section className="px-6 py-12 sm:px-12 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="overflow-hidden rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-neutral-900 shadow-2xl">
+            <img
+              src="/Food.png"
+              alt="Food Safety Dashboard Interface"
+              className="w-full h-auto object-cover max-h-[640px]"
+            />
+            <div className="p-4 sm:p-6 bg-black/60 backdrop-blur-sm border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-xs text-neutral-300">
+              <span>FIG 1.0 · SUPPLIER COMPLIANCE MONITORING INTERFACE</span>
+              <span className="text-neutral-400">GFSI &amp; HACCP Audit Tracking · Expiration Countdowns</span>
+            </div>
           </div>
         </section>
 
         {/* =====================================================
-            USERS
+            2. PROBLEM STATEMENT
         ====================================================== */}
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("02 · PROBLEM DISCOVERY")}
+          </div>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            When compliance data lives in silos, contamination risks multiply
+          </h2>
 
-        <section className="border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-28">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-                02 — Users
+          <div className="mt-10 grid gap-10 lg:grid-cols-2">
+            <div className="space-y-4 text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+              <p>
+                In food manufacturing, a single expired supplier audit can cause millions of dollars in product recalls, federal penalties, and consumer health hazards.
               </p>
-
-              <h2 className="mt-5 font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
-                Three people.
-                <br />
-                One workflow.
-              </h2>
+              <p>
+                QA teams were drowning in manual emails: suppliers sent renewal certificates as PDF attachments, receiving dock inspectors tracked lot numbers on clipboards, and plant managers had no real-time way to know if an incoming shipment complied with food safety standards.
+              </p>
             </div>
-          </div>
 
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                icon: ShieldCheck,
-                role: "QA Manager",
-                need: "Know which suppliers require attention."
-              },
-              {
-                icon: CircleAlert,
-                role: "Food Safety Team",
-                need: "Investigate and resolve food-safety issues."
-              },
-              {
-                icon: Users,
-                role: "Supplier",
-                need: "Understand requirements and respond clearly."
-              }
-            ].map((user) => {
-              const Icon = user.icon;
-
-              return (
-                <div
-                  key={user.role}
-                  className="group rounded-2xl border border-black/[0.08] bg-white p-7 transition-transform duration-500 hover:-translate-y-1 dark:border-white/[0.08] dark:bg-[#191919]">
-                  <Icon
-                    size={22}
-                    strokeWidth={1.5}
-                    className="text-neutral-400"
-                  />
-
-                  <p className="mt-10 text-xs uppercase tracking-[0.15em] text-neutral-400">
-                    Primary user
-                  </p>
-
-                  <h3 className="mt-2 text-xl font-medium">{user.role}</h3>
-
-                  <p className="mt-4 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-                    {user.need}
+            <div className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] p-6 sm:p-8 space-y-4 font-mono text-xs">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-neutral-950 dark:text-white block mb-1">
+                    Lapsed Certificate Blind Spots
+                  </strong>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    Expired supplier certifications were often only discovered during third-party regulatory audits rather than in advance.
                   </p>
                 </div>
-              );
-            })}
-          </div>
-        </section>
+              </div>
 
-        {/* =====================================================
-            USER FLOW
-        ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-28">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-            03 — User Flow
-          </p>
-
-          <h2 className="mt-5 max-w-2xl font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
-            From identifying a risk to resolving the issue.
-          </h2>
-
-          <div className="mt-14 overflow-x-auto pb-4">
-            <div className="flex min-w-[850px] items-center gap-3">
-              {[
-                "Dashboard",
-                "Identify Risk",
-                "Supplier",
-                "Raise Query",
-                "Supplier Response",
-                "Review",
-                "Resolve"
-              ].map((item, index) => (
-                <div key={item} className="flex items-center gap-3">
-                  <div className="rounded-xl border border-black/[0.08] bg-white px-5 py-4 text-sm dark:border-white/[0.08] dark:bg-[#191919]">
-                    <span className="mr-2 text-xs text-neutral-400">
-                      0{index + 1}
-                    </span>
-                    {item}
-                  </div>
-
-                  {index < 6 && (
-                    <ArrowUpRight size={16} className="text-neutral-400" />
-                  )}
+              <div className="flex items-start gap-3 pt-3 border-t border-black/[0.06] dark:border-white/[0.06]">
+                <FileText className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-neutral-950 dark:text-white block mb-1">
+                    Disconnected Query Resolution
+                  </strong>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    When an ingredient batch failed inspection, dispute communication was lost across email threads without an immutable audit trail.
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* =====================================================
-            WIREFRAMES
+            3. TARGET USERS & RESEARCH INSIGHTS
         ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-28">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-            04 — Wireframes
-          </p>
-
-          <h2 className="mt-5 max-w-2xl font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
-            Structure first.
-            <br />
-            Visual polish later.
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("03 · USER RESEARCH & STAKEHOLDERS")}
+          </div>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Stakeholder Mental Models Across the Supply Chain
           </h2>
 
-          <p className="mt-6 max-w-xl text-base leading-7 text-neutral-500 dark:text-neutral-400">
-            I focused first on hierarchy, information density, navigation and
-            the relationship between suppliers, compliance and queries.
-          </p>
-
-          {/* WIREFRAME 01 */}
-          <div className="mt-14">
-            <Wireframe title="Dashboard">
-              {/* <div className="grid h-full grid-cols-[150px_1fr] gap-5"> */}
-                {/* Sidebar */}
-               <img src="Food-Moc.png" alt="" />
-              {/* </div> */}
-            </Wireframe>
-          </div>
-
-          {/* WIREFRAME 02 */}
-          <div className="mt-8 grid gap-8 lg:grid-cols-2">
-            <Wireframe title="Supplier Management">
-         <img src="Food-Moc-1.png" alt="" />
-            </Wireframe>
-
-            <Wireframe title="Query Detail">
-      <img src="Food-Moc-2.png" alt="" />
-            </Wireframe>
-          </div>
-        </section>
-
-        {/* =====================================================
-            DASHBOARD
-        ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-28">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-            05 — Dashboard
-          </p>
-
-          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
-            Answer the important questions first.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-base leading-7 text-neutral-500 dark:text-neutral-400">
-            The dashboard was structured around what needs attention, rather
-            than simply displaying as many metrics as possible.
-          </p>
-
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              ["Total Suppliers", "248"],
-              ["Open Queries", "32"],
-              ["High Risk", "08"],
-              ["Expiring Certificates", "14"]
-            ].map(([label, value]) => (
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {compliancePersonas.map((persona) => (
               <div
-                key={label}
-                className="rounded-2xl border border-black/[0.08] bg-white p-6 dark:border-white/[0.08] dark:bg-[#191919]">
-                <p className="text-xs text-neutral-400">{label}</p>
-
-                <p className="mt-5 font-serif text-4xl">{value}</p>
+                key={persona.role}
+                className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] p-6 sm:p-7 flex flex-col justify-between">
+                <div>
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 block mb-2">
+                    User Persona
+                  </span>
+                  <h3 className="font-serif text-xl font-normal text-neutral-950 dark:text-white">
+                    {persona.role}
+                  </h3>
+                  <p className="mt-3 text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {persona.context}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-black/[0.06] dark:border-white/[0.06] font-mono text-xs text-neutral-700 dark:text-neutral-300">
+                  <strong>Critical Need:</strong> {persona.need}
+                </div>
               </div>
             ))}
           </div>
         </section>
 
         {/* =====================================================
-            QUERY EXPERIENCE
+            4. INFORMATION ARCHITECTURE & KEY WORKFLOWS
         ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-20 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-                Query Management
-              </p>
-
-              <h2 className="mt-5 font-serif text-4xl tracking-[-0.03em] sm:text-5xl">
-                Keep the whole conversation together.
-              </h2>
-
-              <p className="mt-6 max-w-xl text-base leading-7 text-neutral-500 dark:text-neutral-400">
-                Instead of separating communication, documents and status
-                information, the query detail view brings the complete
-                resolution context together.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              {[
-                "Query status",
-                "Supplier information",
-                "Conversation",
-                "Supporting documents",
-                "Resolution history",
-                "Approval"
-              ].map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 rounded-xl border border-black/[0.08] bg-white p-4 dark:border-white/[0.08] dark:bg-[#191919]">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full border border-black/[0.08] text-xs dark:border-white/[0.08]">
-                    {index + 1}
-                  </div>
-
-                  <span className="text-sm">{item}</span>
-
-                  <Check size={16} className="ml-auto text-neutral-400" />
-                </div>
-              ))}
-            </div>
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("04 · COMPLIANCE LIFECYCLE ARCHITECTURE")}
           </div>
-        </section>
-
-        {/* =====================================================
-            DESIGN PRINCIPLE
-        ====================================================== */}
-
-        <section className="border-b border-black/[0.08] px-6 py-24 dark:border-white/[0.08] sm:px-10 lg:px-16 lg:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-              Design Principle
-            </p>
-
-            <h2 className="mt-8 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-6xl">
-              Show the right information at the right moment.
-            </h2>
-
-            <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-neutral-500 dark:text-neutral-400">
-              The goal wasn't to add more information to the product. It was to
-              make the existing information easier to understand, prioritize and
-              act on.
-            </p>
-          </div>
-        </section>
-
-        {/* =====================================================
-            REFLECTION
-        ====================================================== */}
-
-        <section className="px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
-          <p className="text-xs uppercase tracking-[0.18em] text-neutral-400">
-            06 — Reflection
-          </p>
-
-          <h2 className="mt-6 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl">
-            Good enterprise UX isn't about showing more information.
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            End-to-End Supplier Governance Flow
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-500 dark:text-neutral-400">
-            It's about showing the right information at the right moment and
-            making the next action clear.
-          </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {complianceWorkflows.map((flow) => (
+              <div
+                key={flow.step}
+                className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] p-6">
+                <span className="font-mono text-2xl font-light text-neutral-400">{flow.step}</span>
+                <h3 className="mt-4 font-serif text-lg font-normal text-neutral-950 dark:text-white">
+                  {flow.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  {flow.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: Search,
-                title: "Monitor",
-                text: "Understand the current compliance state."
-              },
-              {
-                icon: CircleAlert,
-                title: "Identify",
-                text: "Surface risks and issues that need attention."
-              },
-              {
-                icon: FileText,
-                title: "Resolve",
-                text: "Connect queries, responses and evidence."
-              }
-            ].map((item) => {
-              const Icon = item.icon;
+        {/* =====================================================
+            5 & 6. KEY FEATURES & INTERFACE SOLUTIONS
+        ====================================================== */}
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("05 & 06 · INTERFACE SOLUTIONS")}
+          </div>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Designed for High Data-Density &amp; Immediate Action
+          </h2>
 
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {erpModules.map((module) => {
+              const Icon = module.icon;
               return (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-black/[0.08] p-6 dark:border-white/[0.08]">
-                  <Icon
-                    size={20}
-                    strokeWidth={1.5}
-                    className="text-neutral-400"
-                  />
-
-                  <h3 className="mt-8 text-base font-medium">{item.title}</h3>
-
-                  <p className="mt-2 text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-                    {item.text}
+                <article
+                  key={module.title}
+                  className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] p-8">
+                  <Icon className="h-6 w-6 text-neutral-400" strokeWidth={1.5} />
+                  <h3 className="mt-6 font-serif text-2xl font-normal text-neutral-950 dark:text-white">
+                    {module.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {module.description}
                   </p>
-                </div>
+                </article>
               );
             })}
           </div>
+        </section>
+
+        {/* =====================================================
+            7. ENTERPRISE COMPLEXITY & REGULATORY COMPLIANCE
+        ====================================================== */}
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("07 · DOMAIN COMPLEXITY")}
+          </div>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Adhering to GFSI, FSMA &amp; HACCP Standards
+          </h2>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <div className="p-6 sm:p-8 rounded-2xl border border-black/[0.08] dark:border-white/[0.08]">
+              <h3 className="font-serif text-xl font-normal text-neutral-950 dark:text-white">
+                Strict Immutable Audit Trails
+              </h3>
+              <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                FDA 21 CFR Part 11 mandates that any modifications to compliance certificates or audit scores must be cryptographically timestamped and attributed to authenticated user credentials. The UI surfaces this audit history in a non-intrusive side-panel.
+              </p>
+            </div>
+
+            <div className="p-6 sm:p-8 rounded-2xl border border-black/[0.08] dark:border-white/[0.08]">
+              <h3 className="font-serif text-xl font-normal text-neutral-950 dark:text-white">
+                Multi-Tenant Supplier Isolation
+              </h3>
+              <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                External ingredient vendors access a scoped supplier portal where they can only view and respond to their own queries, while internal enterprise QA officers manage cross-supplier benchmarking.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================
+            8 & 9. DESIGN SYSTEM & TECHNICAL FEASIBILITY
+        ====================================================== */}
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 border-b border-black/[0.08] dark:border-white/[0.08]">
+          <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+            {getSectionTag("08 & 09 · DESIGN SYSTEM & CODE ARCHITECTURE")}
+          </div>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-neutral-950 dark:text-white">
+            Component System &amp; Frontend Implementation
+          </h2>
+
+          <div className="mt-10 space-y-4 font-mono text-xs">
+            <div className="p-5 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] flex items-start gap-4">
+              <Table className="h-5 w-5 text-neutral-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-neutral-950 dark:text-white block mb-1">
+                  Custom Data Table Component Specification
+                </strong>
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  Designed sticky headers, sortable columns, and configurable column visibility drawers so QA officers can personalize their dashboard view based on current audit tasks.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.02] flex items-start gap-4">
+              <Layers className="h-5 w-5 text-neutral-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-neutral-950 dark:text-white block mb-1">
+                  Token-Driven Status Indicators
+                </strong>
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  Standardized status pill design tokens (Compliant, Expiring Soon, Non-Conformance, Suspended) with high contrast text conforming to WCAG 2.1 AA standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================
+            10. IMPACT & NEXT PROJECT
+        ====================================================== */}
+        <section className="px-6 py-20 sm:px-12 sm:py-24 lg:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+          <div>
+            <div className="font-mono text-xs uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
+              {getSectionTag("10 · NEXT CASE STUDY")}
+            </div>
+            <h3 className="mt-2 font-serif text-3xl sm:text-4xl font-normal text-neutral-950 dark:text-white">
+              EduHire AI Learning App
+            </h3>
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+              AI-assisted learning pathways and mobile hiring UX.
+            </p>
+          </div>
+
+          <Link
+            to="/eduhire"
+            className="inline-flex items-center gap-2 rounded-xl bg-neutral-950 px-6 py-3.5 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200 shrink-0">
+            <span>View Next Case Study</span>
+            <ArrowUpRight size={14} />
+          </Link>
         </section>
       </div>
     </main>

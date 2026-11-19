@@ -149,14 +149,21 @@ export default function EduHire() {
           <Reveal>
             <div className="flex items-center justify-between">
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
-                Case Study / 01
+                Case Study / 04 · AI E-Learning &amp; Mobile UX
               </p>
 
-              <Link
-                to="https://www.figma.com/design/gD7WTRylKSftCvHBxLXdO5/Edu-app?t=Vv3SKkRNoSKWEg8W-0"
-                className="text-[12px] text-neutral-400  border-b border-neutral-400 transition-colors duration-300 hover:text-neutral-950 hover:border-neutral-950 dark:hover:text-white dark:hover:border-white">
-                View: EduHire
-              </Link>
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 border border-black/10 dark:border-white/10 px-2 py-0.5 rounded">
+                  Independent Project
+                </span>
+                <a
+                  href="https://www.figma.com/design/gD7WTRylKSftCvHBxLXdO5/Edu-app?t=Vv3SKkRNoSKWEg8W-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] text-neutral-400 border-b border-neutral-400 transition-colors duration-300 hover:text-neutral-950 hover:border-neutral-950 dark:hover:text-white dark:hover:border-white">
+                  View Figma ↗
+                </a>
+              </div>
             </div>
           </Reveal>
 
@@ -1097,28 +1104,32 @@ export default function EduHire() {
         </section>
 
         {/* =================================================
-            NEXT PROJECT
+            NEXT PROJECT · AUDIRE
         ================================================= */}
 
         <section className="border-t border-black/[0.08] px-5 py-16 dark:border-white/[0.08] sm:px-8 sm:py-20 lg:px-14">
           <Reveal>
-            <a href="/selected-work" className="group flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-400">
-                  Back to
+                  Next Project · 05
                 </p>
 
-                <p className="mt-2 font-serif text-[34px] tracking-[-0.035em]">
-                  Selected Work
+                <p className="mt-2 font-serif text-[32px] sm:text-[38px] tracking-[-0.035em]">
+                  Audire AI Voice Studio
+                </p>
+                <p className="text-xs text-neutral-500 font-mono mt-1">
+                  AI Text-to-Speech &amp; Mobile Synthesis Experience
                 </p>
               </div>
 
-              <ArrowUpRight
-                size={28}
-                strokeWidth={1.3}
-                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
-            </a>
+              <Link
+                to="/audire"
+                className="inline-flex items-center gap-2 rounded-xl bg-neutral-950 px-6 py-3.5 font-mono text-xs uppercase tracking-wider text-white transition-all hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200 shrink-0">
+                <span>View Case Study</span>
+                <ArrowUpRight size={15} />
+              </Link>
+            </div>
           </Reveal>
         </section>
       </div>

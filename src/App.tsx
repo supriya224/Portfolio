@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/Home.page";
 import Header from "./components/shared/header/Header";
 import WorkPage from "./pages/Work.Project";
@@ -13,10 +14,22 @@ import VolvoPartnerConnect from "./components/Volvo";
 import Car3DDesign from "./components/Car3D";
 import AdvitiixPlatform from "./components/Advitiix";
 import ModelPipeline from "./components/ModelPipeline";
+import Audire from "./components/Audire";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <CustomCursor />
       <Header />
       <Routes>
@@ -31,6 +44,7 @@ function App() {
         <Route path="/eduhire" element={<EduHire />} />
         <Route path="/finora" element={<Finora />} />
         <Route path="/food" element={<FoodSafety />} />
+        <Route path="/audire" element={<Audire />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
